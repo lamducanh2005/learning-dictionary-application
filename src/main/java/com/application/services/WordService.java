@@ -7,7 +7,9 @@ import dev.hilla.BrowserCallable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 @BrowserCallable
 @AnonymousAllowed
@@ -30,6 +32,7 @@ public class WordService {
     }
 
     public List<String> getSuggestionsByPrefix(String prefix) {
-        return wordRepository.findWordNameByPrefix(prefix);
+        Set<String> wordSet = wordRepository.findWordNameByPrefix(prefix);
+        return new ArrayList<>(wordSet);
     }
 }

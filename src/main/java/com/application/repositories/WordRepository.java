@@ -7,6 +7,7 @@ import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Set;
 
 @Repository
 public interface WordRepository extends JpaRepository<Word, Long> {
@@ -19,6 +20,6 @@ public interface WordRepository extends JpaRepository<Word, Long> {
     List<Word> findWordsByPrefix(@Param("prefix") String prefix);
 
     @Query("SELECT w.word FROM Word w WHERE w.word LIKE :prefix%")
-    List<String> findWordNameByPrefix(@Param("prefix") String prefix);
+    Set<String> findWordNameByPrefix(@Param("prefix") String prefix);
 
 }
