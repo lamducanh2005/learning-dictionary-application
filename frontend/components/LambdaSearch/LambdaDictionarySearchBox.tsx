@@ -25,8 +25,10 @@ export default function LambdaDictionarySearchBox(props : any) {
         <div className={"lambda-dictionary-search-box"}>
             <LambdaSearchBox
                 onSearchChange={handleSearchChange}
+                onSearch={props.onSearch}
                 suggestions={wordSuggestions}
                 placeholder={"Nhập để tìm kiếm từ vựng"}
+
             />
         </div>
     )

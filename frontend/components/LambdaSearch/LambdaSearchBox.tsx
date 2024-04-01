@@ -1,8 +1,11 @@
 import {AutoComplete, AutoCompleteInput, AutoCompleteItem, AutoCompleteList} from "@choc-ui/chakra-autocomplete";
 import * as events from "events";
 import { motion } from "framer-motion";
+import {useState} from "react";
 
 export default function LambdaSearchBox(props : any) {
+
+    const [inputValue, setInputValue] = useState("");
 
     return(
         <div
@@ -11,7 +14,10 @@ export default function LambdaSearchBox(props : any) {
         >
             <AutoComplete>
                 <AutoCompleteInput
-                    onChange={(e : any) => props.onSearchChange(e.target.value)}
+                    onChange={(e : any) => {
+                        setInputValue(e.target.value);
+                        props.onSearchChange(inputValue);
+                    }}
                     placeholder={props.placeholder}
                     className={"lambda-search-input"}
                     style={{
@@ -31,6 +37,7 @@ export default function LambdaSearchBox(props : any) {
 
             <div style={{width: 20}}></div>
             <motion.button
+                onClick={() => props.onSearch(inputValue)}
                 style={{
                     backgroundColor: 'black',
                     color: 'white',

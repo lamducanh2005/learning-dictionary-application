@@ -11,7 +11,7 @@ export default function DictionaryHeader(props : any) {
                 <div style={{width: "20px"}}/>
                 <LambdaHeaderTitle title={"Lambda Dictionary"} />
                 <div style={{flex: 1}}/>
-                <LambdaDictionarySearchBox />
+                <LambdaDictionarySearchBox onSearch={props.onSearch}  />
             </LambdaHeader>
         </div>
     )
