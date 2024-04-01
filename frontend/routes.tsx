@@ -1,7 +1,9 @@
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
+import DictionaryView from "Frontend/views/Dictionary/DictionaryView";
 
-export const routes = [
 
-] as RouteObject[];
+const router = createBrowserRouter([
+    {path: '/lambda/dictionary', element: <DictionaryView />, handle: {title: 'Dictionary'}},
+]);
 
-export default createBrowserRouter(routes);
+export default router;
