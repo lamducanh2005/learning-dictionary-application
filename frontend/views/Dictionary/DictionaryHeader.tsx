@@ -5,7 +5,10 @@ import LambdaDictionarySearchBox from "Frontend/components/LambdaSearch/LambdaDi
 
 export default function DictionaryHeader(props : any) {
     return(
-        <div className={"dictionary-view-header"}>
+        <div
+            className={"dictionary-view-header"}
+            style={{ position: 'sticky', top: 0, zIndex: 1000, padding: 10}}
+        >
             <LambdaHeader>
                 <LambdaNavigationButton/>
                 <div style={{width: "20px"}}/>
