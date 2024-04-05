@@ -29,6 +29,9 @@ public class Word {
     @Column(name = "audio_url")
     private String audioUrl;
 
+    @Column(name = "is_known")
+    private boolean isKnown;
+
     @ManyToMany(mappedBy = "words")
     private List<Collection> collections;
 
@@ -36,4 +39,6 @@ public class Word {
     @CollectionTable(name = "examples", joinColumns = @JoinColumn(name = "word_id"))
     @Column(name = "example")
     private List<String> examples;
+
+
 }

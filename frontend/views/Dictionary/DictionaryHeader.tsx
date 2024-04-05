@@ -1,7 +1,7 @@
-import LambdaHeader from "Frontend/components/LambdaHeader/LambdaHeader";
-import LambdaNavigationButton from "Frontend/components/LambdaNavigation/LambdaNavigationButton";
-import LambdaHeaderTitle from "Frontend/components/LambdaHeader/LambdaHeaderTitle";
-import LambdaDictionarySearchBox from "Frontend/components/LambdaSearch/LambdaDictionarySearchBox";
+import LambdaHeader from "Frontend/components/LambdaComponents/LambdaHeader/LambdaHeader";
+import LambdaNavigationButton from "Frontend/components/LambdaComponents/LambdaNavigation/LambdaNavigationButton";
+import LambdaHeaderTitle from "Frontend/components/LambdaComponents/LambdaHeader/LambdaHeaderTitle";
+import DictionarySearchBox from "Frontend/components/Dictionary/Search/DictionarySearchBox";
 
 export default function DictionaryHeader(props : any) {
     return(
@@ -14,7 +14,7 @@ export default function DictionaryHeader(props : any) {
                 <div style={{width: "20px"}}/>
                 <LambdaHeaderTitle title={"Lambda Dictionary"} />
                 <div style={{flex: 1}}/>
-                <LambdaDictionarySearchBox onSearch={props.onSearch}  />
+                <DictionarySearchBox onSearch={props.onSearch}  />
             </LambdaHeader>
         </div>
     )

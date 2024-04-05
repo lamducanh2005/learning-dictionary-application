@@ -1,5 +1,5 @@
 import {HamburgerIcon} from "@chakra-ui/icons";
-import LambdaNavigation from "Frontend/components/LambdaNavigation/LambdaNavigation";
+import LambdaNavigation from "Frontend/components/LambdaComponents/LambdaNavigation/LambdaNavigation";
 import {useDisclosure} from "@chakra-ui/react";
 
 export default function LambdaNavigationButton() {

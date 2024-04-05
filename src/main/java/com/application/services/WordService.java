@@ -4,6 +4,9 @@ import com.application.models.Word;
 import com.application.repositories.WordRepository;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.BrowserCallable;
+import dev.hilla.Endpoint;
+import dev.hilla.crud.CrudRepositoryService;
+import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -35,4 +38,11 @@ public class WordService {
         Set<String> wordSet = wordRepository.findWordNameByPrefix(prefix);
         return new ArrayList<>(wordSet);
     }
+
+    public void setIsKnownById(Long wordId, boolean isKnown) {
+        wordRepository.updateIsKnownById(wordId, isKnown);
+    }
+
 }
+
+

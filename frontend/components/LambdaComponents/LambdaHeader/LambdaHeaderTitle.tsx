@@ -6,7 +6,7 @@ export default function LambdaHeaderTitle(props : any) {
             {...props}
             className={"lambda-header-title"}
             style={{
-                fontSize: "24px",
+                fontSize: "20px",
                 fontFamily: "JetBrains Mono, monospace",
                 fontWeight: "bold",
             }}

@@ -1,0 +1,42 @@
+.dictionary-result-examples {
+    grid-column: span 12;
+    grid-row: span 1;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.dictionary-result-examples > .title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 5px;
+}
+
+.dictionary-result-examples > .wrapper {
+    display: flex;
+    flex-direction: row;
+    overflow-x: scroll;
+    scrollbar-width: none;
+}
+
+.dictionary-result-examples > .wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.dictionary-result-examples > .wrapper > .dictionary-result-example-item {
+    padding: 20px 10px;
+    background-color: #ffffff;
+    border: 1px solid #f0f0f0;
+    box-shadow: #eee 0 0 5px;
+    margin-right: 5px;
+    min-width: 40%;
+    border-radius: 8px;
+    aspect-ratio: 1 / 1.5;
+}
+
+.dictionary-result-examples > .wrapper > .dictionary-result-example-item:last-child {
+    margin-right: 0;
+}

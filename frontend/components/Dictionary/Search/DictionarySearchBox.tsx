@@ -1,15 +1,14 @@
-import LambdaSearchBox from "Frontend/components/LambdaSearch/LambdaSearchBox";
-import {useEffect, useState} from "react";
+import LambdaSearchBox from "Frontend/components/LambdaComponents/LambdaSearch/LambdaSearchBox";
+import {createContext, useEffect, useState} from "react";
 import {WordService} from "Frontend/generated/endpoints";
 
-export default function LambdaDictionarySearchBox(props : any) {
+
+export default function DictionarySearchBox(props : any) {
 
     const [wordInput, setWordInput] = useState<string>("");
     const [wordSuggestions, setWordSuggestions] = useState<string[]>([]);
 
-    const handleSearchChange = (searchInput : string) => {
-        setWordInput(searchInput);
-    }
+    const handleSearchChange = (searchInput : string) => setWordInput(searchInput);
 
     useEffect(() => {
         const updateSuggestions = async () => {
@@ -19,16 +18,16 @@ export default function LambdaDictionarySearchBox(props : any) {
             }
         }
         updateSuggestions();
-    })
+    }, [wordInput])
 
     return(
+
         <div className={"lambda-dictionary-search-box"}>
             <LambdaSearchBox
                 onSearchChange={handleSearchChange}
                 onSearch={props.onSearch}
                 suggestions={wordSuggestions}
                 placeholder={"Nhập để tìm kiếm từ vựng"}
-
             />
         </div>
     )

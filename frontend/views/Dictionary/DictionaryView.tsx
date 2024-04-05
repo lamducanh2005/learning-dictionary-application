@@ -1,8 +1,10 @@
 import DictionaryHeader from "Frontend/views/Dictionary/DictionaryHeader";
 import DictionaryBody from "Frontend/views/Dictionary/DictionaryBody";
-import {useEffect, useState} from "react";
+import {createContext, useEffect, useState} from "react";
 import Word from "Frontend/generated/com/application/models/Word";
 import {WordService} from "Frontend/generated/endpoints";
+
+export const SearchResultsContext = createContext([] as Word[])
 
 export default function DictionaryView(props : any) {
 
@@ -15,9 +17,11 @@ export default function DictionaryView(props : any) {
     }
 
     return(
+        <SearchResultsContext.Provider value={searchResults}>
         <div className={"dictionary-view"}>
             <DictionaryHeader onSearch={handleSearch} />
-            <DictionaryBody results={searchResults} />
+            <DictionaryBody />
         </div>
+        </SearchResultsContext.Provider>
     )
 }

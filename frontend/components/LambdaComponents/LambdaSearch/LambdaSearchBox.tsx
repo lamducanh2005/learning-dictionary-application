@@ -1,35 +1,43 @@
-import {AutoComplete, AutoCompleteInput, AutoCompleteItem, AutoCompleteList} from "@choc-ui/chakra-autocomplete";
+import {AutoComplete, AutoCompleteInput, AutoCompleteItem, AutoCompleteList, Item} from "@choc-ui/chakra-autocomplete";
 import * as events from "events";
 import { motion } from "framer-motion";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 
 export default function LambdaSearchBox(props : any) {
 
-    const [inputValue, setInputValue] = useState("");
+    const [inputValue, setInputValue] = useState();
 
     return(
         <div
             className={"lambda-search-box"}
             style={{ display: "flex", flexDirection: "row" }}
         >
-            <AutoComplete>
+            <AutoComplete
+                onSelectOption={(item : any) => {
+                    setInputValue(item.item.value);
+                    props.onSearch(item.item.value);
+                }}
+            >
                 <AutoCompleteInput
+                    spellCheck={false}
                     onChange={(e : any) => {
                         setInputValue(e.target.value);
-                        props.onSearchChange(inputValue);
+                        props.onSearchChange(e.target.value);
                     }}
-                    placeholder={props.placeholder}
+                    placeholder={"Nhập vào từ cần tìm kiếm"}
                     className={"lambda-search-input"}
                     style={{
                         minWidth: 480,
-                        height: 50,
+                        height: 40,
                         backgroundColor: 'white',
                     }}
                 />
-                <AutoCompleteList>
+                <AutoCompleteList >
                     {
                         props.suggestions.map((item : string) => {
-                            return <AutoCompleteItem value={item} key={item} />;
+                            return (
+                                <AutoCompleteItem value={item} key={item} />
+                            );
                         })
                     }
                 </AutoCompleteList>
@@ -41,10 +49,10 @@ export default function LambdaSearchBox(props : any) {
                 style={{
                     backgroundColor: 'black',
                     color: 'white',
-                    padding: '10px 20px',
+                    padding: '5px 10px',
                     borderRadius: '5px',
                     minWidth: 120,
-                    height: 50,
+                    height: 40,
                 }}
             >
                 Tìm kiếm
