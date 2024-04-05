@@ -32,9 +32,9 @@
     border: 1px solid #f0f0f0;
     box-shadow: #eee 0 0 5px;
     margin-right: 5px;
-    min-width: 40%;
+    min-width: 60%;
     border-radius: 8px;
-    aspect-ratio: 1 / 1.5;
+    aspect-ratio: 1.5 / 1;
 }
 
 .dictionary-result-examples > .wrapper > .dictionary-result-example-item:last-child {
