@@ -6,6 +6,7 @@ import DictionaryResultMinibar from "Frontend/components/Dictionary/Results/Resu
 import Word from "Frontend/generated/com/application/models/Word";
 import { motion } from "framer-motion";
 import {createContext} from "react";
+import DictionaryResultNote from "Frontend/components/Dictionary/Results/ResultItem/Note/DictionaryResultNote";
 
 export const WordContext = createContext({} as Word);
 
@@ -22,7 +23,7 @@ export default function DictionaryResultItem(props : any) {
                 width: '100%',
                 marginBottom: '100px',
                 fontFamily: 'JetBrains Mono, monospace',
-                padding: '10px 10px 0 10px',
+                padding: '10px',
                 backgroundColor: 'rgba(255, 255, 255, 0.25)',
                 borderRadius: '10px',
                 backdropFilter: 'blur(10px)',
@@ -34,6 +35,7 @@ export default function DictionaryResultItem(props : any) {
         >
             <DictionaryResultWord />
             <DictionaryResultMinibar />
+            <DictionaryResultNote />
             <DictionaryResultExplain />
             <DictionaryResultExamples />
             {/*<DictionaryResultRelated />*/}

@@ -10,8 +10,11 @@ export default function LambdaNavigationButton() {
         <div
             className={"lambda-navigation-button"}
             style={{
-                backgroundColor: '#ddd',
-                height: '100%',
+                backgroundColor: '#ffffff',
+                boxShadow: '#eee 0px 0px 5px',
+                border: '1px solid #ddd',
+                borderRadius: '8px',
+                height: '40px',
                 aspectRatio: '1 / 1',
                 display: 'flex',
                 justifyContent: 'center',

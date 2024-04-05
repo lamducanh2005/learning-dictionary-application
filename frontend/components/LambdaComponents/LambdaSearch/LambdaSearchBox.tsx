@@ -2,6 +2,7 @@ import {AutoComplete, AutoCompleteInput, AutoCompleteItem, AutoCompleteList, Ite
 import * as events from "events";
 import { motion } from "framer-motion";
 import {useEffect, useState} from "react";
+import {SearchIcon} from "@chakra-ui/icons";
 
 export default function LambdaSearchBox(props : any) {
 
@@ -43,19 +44,21 @@ export default function LambdaSearchBox(props : any) {
                 </AutoCompleteList>
             </AutoComplete>
 
-            <div style={{width: 20}}></div>
+            <div style={{width: 10}}></div>
             <motion.button
                 onClick={() => props.onSearch(inputValue)}
                 style={{
                     backgroundColor: 'black',
                     color: 'white',
-                    padding: '5px 10px',
                     borderRadius: '5px',
-                    minWidth: 120,
                     height: 40,
+                    aspectRatio: '1 / 1',
+                    display: 'flex',
+                    justifyContent: 'center',
+                    alignItems: 'center',
                 }}
             >
-                Tìm kiếm
+                <SearchIcon />
             </motion.button>
         </div>
     )

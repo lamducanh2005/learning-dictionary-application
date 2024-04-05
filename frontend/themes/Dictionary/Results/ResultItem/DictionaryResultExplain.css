@@ -1,0 +1,25 @@
+.dictionary-result-explain {
+    grid-column: span 12;
+    grid-row: span 1;
+    padding: 5px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    border: 1px solid #eee;
+    background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+.dictionary-result-explain > .title {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 10px 5px;
+}
+
+.dictionary-result-explain > .content {
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: #eee 0 0 10px;
+    padding: 20px 10px;
+    border-radius: 8px;
+    border: 1px solid #f0f0f0;
+}

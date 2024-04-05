@@ -28,7 +28,23 @@ export default function LambdaHeader(props : any) {
             animate={y > 150 ? "scroll" : "unScroll"}
             variants={scrollVariants}
         >
+            <motion.div
+                animate={y > 150 ? "scroll" : "unScroll"}
+                variants={{
+                    unScroll: { width: 10 },
+                    scroll: { width: 0 }
+                }}
+            />
+            
             {props.children}
+
+            <motion.div
+                animate={y > 150 ? "scroll" : "unScroll"}
+                variants={{
+                    unScroll: { width: 10 },
+                    scroll: { width: 0 }
+                }}
+            />
         </motion.div>
     )
 }
