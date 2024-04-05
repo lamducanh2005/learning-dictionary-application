@@ -19,8 +19,10 @@ export default function MinibarKnownWordMarker(props : any) {
     return (
         <Tooltip
             label={(isKnown) ? "Từ này nằm trong vốn từ của bạn" : "Từ này không thuộc vốn từ của bạn"}
-            bg={"white"}
+            bg={"rgba(255, 255, 255, 0.75)"}
             color={(isKnown) ? "#00a15e" : "#c20033"}
+            p={'5px 10px'}
+            closeOnClick={false}
         >
         <div
             className={"minibar-known-word-marker"}
