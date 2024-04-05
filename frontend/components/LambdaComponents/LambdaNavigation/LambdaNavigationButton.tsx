@@ -19,6 +19,7 @@ export default function LambdaNavigationButton() {
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
+                cursor: 'pointer',
             }}
             onClick={onOpen}
         >
