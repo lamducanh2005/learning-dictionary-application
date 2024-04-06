@@ -16,7 +16,7 @@ export default function LambdaHeader(props : any) {
 
         },
         scroll: {
-            backgroundColor: 'rgba(248, 248, 248, 0.2)',
+            backgroundColor: 'rgba(248, 248, 248, 0.3)',
             backdropFilter: 'blur(10px)',
             height: '60px',
         }

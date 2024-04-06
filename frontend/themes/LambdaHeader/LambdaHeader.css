@@ -11,7 +11,7 @@
     background-color: rgba(255, 255, 255, 0.75);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(200, 200, 200, 0.5);
-    box-shadow: #eee 0 0 10px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0 0 10px;
     border-radius: 10px;
     font-family: "JetBrains Mono", monospace;
 }

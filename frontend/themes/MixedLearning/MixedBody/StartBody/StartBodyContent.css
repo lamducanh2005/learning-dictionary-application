@@ -1,0 +1,12 @@
+.start-body-content {
+    margin: 0 auto;
+    width: 720px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #eee;
+    border: solid 1px #eee;
+    display: flex;
+    flex-direction: column;
+    font-family: "JetBrains Mono", monospace;
+}

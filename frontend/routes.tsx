@@ -1,8 +1,8 @@
 import {createBrowserRouter} from 'react-router-dom';
 import DictionaryView from "Frontend/views/Dictionary/DictionaryView";
 import MixedView from "Frontend/views/MixedLearning/MixedView";
-import MixedLearningContent from "Frontend/components/MixedLearning/MixedBody/MixedLearningContent";
-import MixedStartContent from "Frontend/components/MixedLearning/MixedBody/MixedStartContent";
+import MixedLearningBody from "Frontend/components/MixedLearning/MixedBody/MixedLearningBody";
+import MixedStartBody from "Frontend/components/MixedLearning/MixedBody/MixedStartBody";
 
 
 
@@ -18,8 +18,8 @@ const router = createBrowserRouter([
         element: <MixedView/>,
         handle: {title: 'Lambda Mixed Learning'},
         children: [
-            {path: '', element: <MixedStartContent/>, handle: {title: 'Lambda Mixed Learning | Start'}},
-            {path: 'learning', element: <MixedLearningContent/>, handle: {title: 'Lambda Mixed Learning | Learning'}}
+            {path: '', element: <MixedStartBody/>, handle: {title: 'Lambda Mixed Learning | Start'}},
+            {path: 'learning', element: <MixedLearningBody/>, handle: {title: 'Lambda Mixed Learning | Learning'}}
         ]
     }
 ]);

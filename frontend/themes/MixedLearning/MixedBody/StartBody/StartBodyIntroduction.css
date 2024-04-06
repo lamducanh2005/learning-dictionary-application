@@ -1,0 +1,27 @@
+.start-body-introduction {
+    width: 720px;
+    margin: 150px auto;
+    padding: 20px 10px 10px 10px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    box-shadow: 0 0 10px #eee;
+    border: 1px solid #eee;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.start-body-introduction > .title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+    padding-left: 10px;
+}
+
+.start-body-introduction > .content {
+    background-color: rgba(255, 255, 255, 1);
+    margin-top: 10px;
+    padding: 20px 10px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #eee;
+    border: 1px solid #eee;
+
+}
