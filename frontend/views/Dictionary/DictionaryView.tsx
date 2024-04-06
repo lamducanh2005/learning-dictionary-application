@@ -1,5 +1,5 @@
-import DictionaryHeader from "Frontend/views/Dictionary/DictionaryHeader";
-import DictionaryBody from "Frontend/views/Dictionary/DictionaryBody";
+import DictionaryHeader from "Frontend/components/Dictionary/DictionaryHeader";
+import DictionaryBody from "Frontend/components/Dictionary/DictionaryBody";
 import {createContext, useEffect, useState} from "react";
 import Word from "Frontend/generated/com/application/models/Word";
 import {WordService} from "Frontend/generated/endpoints";
