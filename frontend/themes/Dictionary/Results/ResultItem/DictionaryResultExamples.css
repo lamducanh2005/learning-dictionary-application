@@ -27,16 +27,42 @@
 }
 
 .dictionary-result-examples > .wrapper > .dictionary-result-example-item {
-    padding: 20px 10px;
+    padding: 10px;
     background-color: #ffffff;
     border: 1px solid #f0f0f0;
     box-shadow: #eee 0 0 5px;
     margin-right: 5px;
     min-width: 60%;
     border-radius: 8px;
-    aspect-ratio: 1.5 / 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
 }
 
 .dictionary-result-examples > .wrapper > .dictionary-result-example-item:last-child {
     margin-right: 0;
+}
+
+.dictionary-result-example-item > .label {
+    padding: 10px;
+    width: 100%;
+    font-weight: bold;
+    background-color: #eee;
+    border: #ddd 1px solid;
+    border-radius: 5px;
+}
+
+.dictionary-result-example-item > .content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+    padding: 10px;
+    text-align: justify;
+    text-indent: 2em;
+}
+
+.dictionary-result-example-item > .content > .en {
+    font-style: italic;
+    color: #666;
 }

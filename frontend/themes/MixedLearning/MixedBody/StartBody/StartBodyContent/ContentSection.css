@@ -25,7 +25,6 @@
     /*border-radius: 10px;*/
     /*box-shadow: 0 0 10px #eee;*/
     margin-top: 10px;
-    height: 100px;
     overflow-x: scroll;
     scrollbar-width: none;
 }
@@ -36,11 +35,11 @@
 
 .start-body-content-section > .wrapper > .start-body-content-section-item {
     min-width: 40%;
-    height: 100px;
     background-image: url("https://www.bain.com/contentassets/a09b8e117536469d9f00a4e4dbc264ee/beijing-3_1.png");
     background-size: cover;
     background-repeat: no-repeat;
-    /*aspect-ratio: 3 / 2;*/
+    background-position: center;
+    aspect-ratio: 3 / 2;
     margin-right: 10px;
     border-radius: 10px;
 }

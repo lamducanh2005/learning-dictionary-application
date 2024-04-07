@@ -2,6 +2,7 @@ import LambdaHeader from "Frontend/components/LambdaComponents/LambdaHeader/Lamb
 import LambdaNavigationButton from "Frontend/components/LambdaComponents/LambdaNavigation/LambdaNavigationButton";
 import LambdaHeaderTitle from "Frontend/components/LambdaComponents/LambdaHeader/LambdaHeaderTitle";
 import DictionarySearchBox from "Frontend/components/Dictionary/Search/DictionarySearchBox";
+import 'Frontend/themes/Dictionary/DictionaryHeader.css';
 
 export default function DictionaryHeader(props : any) {
     return(

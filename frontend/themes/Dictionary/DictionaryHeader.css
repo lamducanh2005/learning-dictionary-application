@@ -1,0 +1,12 @@
+.dictionary-view-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .dictionary-view-header .lambda-header-title {
+        display: none;
+    }
+}

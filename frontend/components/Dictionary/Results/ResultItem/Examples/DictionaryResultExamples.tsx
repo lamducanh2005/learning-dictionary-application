@@ -12,7 +12,7 @@ export default function DictionaryResultExamples(props : any) {
             <div className={"title"}>Các ví dụ </div>
             <div className={"wrapper"}>
                 {word.examples?.map((example : any) => {
-                    return <DictionaryResultExampleItem key={example} example={example} />
+                    return <DictionaryResultExampleItem key={example.id} example={example}/>
                 })}
             </div>
         </div>
