@@ -1,0 +1,11 @@
+.dev-dictionary-results {
+    border: 3px solid black;
+    padding: 30px 20px;
+    flex: 3;
+    overflow-y: scroll;
+    scrollbar-width: none;
+}
+
+.dev-dictionary-results::-webkit-scrollbar {
+    display: none;
+}

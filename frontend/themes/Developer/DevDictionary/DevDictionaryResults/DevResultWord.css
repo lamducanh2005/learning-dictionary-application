@@ -1,0 +1,15 @@
+.dev-result-word {
+    display: flex;
+    flex-direction: column;
+}
+
+.dev-result-word > .id {
+    font-size: 16px;
+    color: #666;
+}
+
+.dev-result-word > .word {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}

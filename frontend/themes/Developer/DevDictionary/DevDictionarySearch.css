@@ -1,0 +1,70 @@
+.dev-dictionary-search {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 3px solid black;
+    box-shadow: #ddd 0 0 5px;
+    flex: 1;
+    padding: 10px;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.dev-dictionary-search > .dev-search-box {
+    position: sticky;
+    top: 0;
+}
+
+.dev-dictionary-search > .dev-search-box > input {
+    width: 100%;
+    padding: 5px;
+    border: #666 1px solid;
+}
+
+.dev-dictionary-search > .dev-search-box > input:focus {
+    outline: none;
+}
+
+.dev-dictionary-search > .dev-suggestions {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding: 5px;
+    margin-top: 10px;
+    border: #666 1px solid;
+    width: 100%;
+}
+
+.dev-dictionary-search > .dev-suggestions > .dev-suggestions-item {
+    padding: 5px;
+    border: #666 1px solid;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+}
+
+.dev-dictionary-search > .dev-suggestions > .dev-suggestions-item:hover {
+    background-color: #ddd;
+}
+
+.dev-dictionary-search > .dev-suggestions > .dev-suggestions-item:active {
+    background-color: #333;
+}
+
+.dev-suggestions-item > .word {
+    color: black;
+    font-weight: bolder;
+}
+
+.dev-suggestions-item > .id {
+    color: #999;
+    font-weight: lighter;
+}
+
+.dev-suggestions-item:active > .word {
+    color: white;
+}
+
+.dev-suggestions-item:active > .id {
+    color: #aaa;
+}

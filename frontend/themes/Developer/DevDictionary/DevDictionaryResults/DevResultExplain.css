@@ -1,0 +1,21 @@
+.dev-result-explain {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    position: relative;
+}
+
+.dev-result-explain > .explain-input {
+    width: 100%;
+    padding: 20px 110px 20px 10px;
+    min-height: 180px;
+}
+
+.dev-result-explain > .submit-button {
+    background-color: black;
+    padding: 5px 10px;
+    min-width: 100px;
+    color: white;
+}
+

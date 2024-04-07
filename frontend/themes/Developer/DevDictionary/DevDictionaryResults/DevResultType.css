@@ -1,0 +1,21 @@
+.dev-result-type {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+    margin-top: 25px;
+}
+
+.dev-result-type > .type-input {
+    flex: 1;
+    padding: 5px 10px;
+}
+
+.dev-result-type > .submit-button {
+    flex: 0;
+    background-color: black;
+    color: white;
+    min-width: 100px;
+    padding: 5px 10px;
+}
