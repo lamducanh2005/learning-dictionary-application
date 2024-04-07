@@ -1,13 +1,16 @@
 package com.application.services;
 
+import com.application.models.Example;
 import com.application.models.Word;
 import com.application.repositories.WordRepository;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.BrowserCallable;
 import dev.hilla.Endpoint;
 import dev.hilla.crud.CrudRepositoryService;
+import jakarta.transaction.Transactional;
 import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -41,6 +44,24 @@ public class WordService {
 
     public void setIsKnownById(Long wordId, boolean isKnown) {
         wordRepository.updateIsKnownById(wordId, isKnown);
+    }
+
+    public void setTypeById(Long id, String type) {
+        wordRepository.updateTypeById(id, type);
+    }
+
+    public void setLevelById(Long id, String level) {
+        wordRepository.updateLevelById(id, level);
+    }
+
+    public void setExplainById(Long id, String explain) {
+        wordRepository.updateExplainById(id, explain);
+    }
+
+    public void setExamplesById(Long id, List<Example> examples) {
+        Word word = wordRepository.findWordById(id);
+        word.setExamples(examples);
+        wordRepository.save(word);
     }
 
 }

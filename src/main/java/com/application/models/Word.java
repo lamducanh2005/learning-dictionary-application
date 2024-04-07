@@ -23,7 +23,7 @@ public class Word {
     @Column(name = "level")
     private String level;
 
-    @Column(name = "explain")
+    @Column(name = "explaining")
     private String explain;
 
     @Column(name = "audio_url")
@@ -35,10 +35,9 @@ public class Word {
     @ManyToMany(mappedBy = "words")
     private List<Collection> collections;
 
-    @ElementCollection
-    @CollectionTable(name = "examples", joinColumns = @JoinColumn(name = "word_id"))
-    @Column(name = "example")
-    private List<String> examples;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "word_id")
+    private List<Example> examples;
 
 
 }

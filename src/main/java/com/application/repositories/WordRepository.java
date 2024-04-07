@@ -29,4 +29,20 @@ public interface WordRepository extends JpaRepository<Word, Long> {
     @Transactional
     @Query("UPDATE Word w SET w.isKnown = :isKnown WHERE w.id = :wordId")
     void updateIsKnownById(@Param("wordId") Long wordId, @Param("isKnown") boolean isKnown);
+
+    @Modifying
+    @Transactional
+    @Query("UPDATE Word w SET w.type = :type WHERE w.id = :id")
+    void updateTypeById(@Param("id") Long id, @Param("type") String type);
+
+    @Modifying
+    @Transactional
+    @Query("UPDATE Word w SET w.level = :level WHERE w.id = :id")
+    void updateLevelById(@Param("id") Long id, @Param("level") String level);
+
+    @Modifying
+    @Transactional
+    @Query("UPDATE Word w SET w.explain = :explain WHERE w.id = :id")
+    void updateExplainById(@Param("id") Long id, @Param("explain") String explain);
+
 }
