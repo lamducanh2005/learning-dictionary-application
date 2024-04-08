@@ -8,6 +8,7 @@ export default function LambdaAudioButton(props : any) {
                 onClick={() => {
                     const audio = new Audio(props.audioUrl);
                     audio.play();
+                    console.log(props.audioUrl);
                 }}
             >
                 {props.children}
