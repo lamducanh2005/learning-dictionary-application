@@ -5,8 +5,22 @@
     padding: 10px;
 }
 
-@media (max-width: 768px) {
+.dictionary-view-header .flex-spacer {
+    flex: 1;
+}
+
+
+@media (max-width: 860px) {
     .dictionary-view-header .lambda-header-title {
         display: none;
     }
+
+    .dictionary-view-header .flex-spacer {
+        flex: 0;
+    }
+
+    .dictionary-view-header .lambda-dictionary-search-box {
+        flex: 1;
+    }
+
 }

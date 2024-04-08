@@ -14,7 +14,7 @@ export default function DictionaryHeader(props : any) {
                 <LambdaNavigationButton/>
                 <div style={{width: "20px"}}/>
                 <LambdaHeaderTitle title={"Lambda Dictionary"} />
-                <div style={{flex: 1}}/>
+                <div className={"flex-spacer"}/>
                 <DictionarySearchBox onSearch={props.onSearch}  />
             </LambdaHeader>
         </div>
