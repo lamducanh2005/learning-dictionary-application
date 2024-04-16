@@ -1,7 +1,7 @@
 import {MessageInput} from "@hilla/react-components/MessageInput";
 import 'Frontend/themes/Assistant/AssistantChat/AssistantChatBox.css';
 import {useContext, useState} from "react";
-import {Menu} from "@chakra-ui/react";
+import {Menu, useToast} from "@chakra-ui/react";
 import AssistantChatBoxMenu from "Frontend/components/Assistant/AssistantBody/AssistantChatBox/AssistantChatBoxMenu";
 import AssistantChatBoxInput from "Frontend/components/Assistant/AssistantBody/AssistantChatBox/AssistantChatBoxInput";
 import {ChatIcon} from "@chakra-ui/icons";
@@ -10,14 +10,21 @@ import AssistantRequest from "Frontend/generated/com/application/models/Assistan
 import {ProfileContext} from "Frontend/App";
 import {AssistantRequestService} from "Frontend/generated/endpoints";
 import LambdaAssistantRequest from "Frontend/components/LambdaComponents/LambdaAssistant/LambdaAssistanRequest";
+import AssistantChatBoxToast from "Frontend/components/Assistant/AssistantBody/AssistantChatBox/AssistantChatBoxToast";
 
 export default function AssistantChatBox(props: any) {
 
     const profile = useContext(ProfileContext);
     const [type, setType] = useState("text");
     const [request, setRequest] = useState("");
+    const toast = useToast()
 
     const handleClick = async () => {
+        toast({
+            position: 'bottom',
+            render: () => <AssistantChatBoxToast/>,
+            duration: 10000,
+        })
         const newRequest: AssistantRequest = {
             request: request,
             response: await LambdaAssistantRequest(request, type),

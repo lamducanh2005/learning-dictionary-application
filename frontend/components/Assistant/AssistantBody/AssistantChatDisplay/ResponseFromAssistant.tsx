@@ -1,8 +1,17 @@
-import {Avatar} from "@chakra-ui/react";
+import {Avatar, useToast} from "@chakra-ui/react";
 import RequestType from "Frontend/components/Assistant/AssistantBody/AssistantChatDisplay/RequestType";
 import {motion} from "framer-motion";
+import ReactMarkdown from "react-markdown";
+import {useEffect} from "react";
 
 export default function ResponseFromAssistant(props: any) {
+
+    const toast = useToast();
+
+    useEffect(() => {
+        toast.closeAll();
+    }, []);
+
     return (
         <motion.div
             className={"response-from-assistant"}
@@ -20,7 +29,9 @@ export default function ResponseFromAssistant(props: any) {
                         RequestType[props.request.type]
                     }
                 </div>
-                <div className={"response-content"}>{props.request.response}</div>
+                <div className={"response-content"}>
+                    <ReactMarkdown>{props.request.response}</ReactMarkdown>
+                </div>
             </div>
         </motion.div>
     )

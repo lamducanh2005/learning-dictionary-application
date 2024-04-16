@@ -52,6 +52,11 @@
     margin-top: 20px;
     font-size: 14px;
     text-align: justify;
+    /*white-space: pre-line;*/
+}
+
+.response-from-assistant > .right > .response-content ul {
+    padding-left: 50px;
 }
 
 .response-from-assistant > .left > .assistant-avatar {
