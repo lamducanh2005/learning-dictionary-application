@@ -2,6 +2,7 @@ import Word from "Frontend/generated/com/application/models/Word";
 import DictionaryResultItem from "Frontend/components/Dictionary/Results/DictionaryResultItem";
 import { SearchResultsContext} from "Frontend/views/Dictionary/DictionaryView";
 import {useContext} from "react";
+import DictionaryResultPlaceholder from "Frontend/components/Dictionary/Results/DictionaryResultPlaceholder";
 
 export default function DictionaryResults(props : any) {
 
@@ -18,7 +19,7 @@ export default function DictionaryResults(props : any) {
                 alignItems: 'center',
             }}
         >
-            {
+            {(results.length === 0) ? <DictionaryResultPlaceholder/> :
                 results.map((result : Word) => {
                     return <DictionaryResultItem key={result.id} word={result} />
                 })

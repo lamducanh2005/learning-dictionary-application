@@ -6,8 +6,13 @@ import {
     PopoverHeader,
     PopoverTrigger
 } from "@chakra-ui/react";
+import {useContext} from "react";
+import {ProfileContext} from "Frontend/App";
 
 export default function LambdaCollectionPopover(props : any) {
+
+    const profile = useContext(ProfileContext)
+
     return (
         <Popover>
             <PopoverTrigger>

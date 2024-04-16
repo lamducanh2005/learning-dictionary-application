@@ -1,6 +1,4 @@
 export default function LambdaHeaderTitle(props : any) {
-
-
     return(
         <div
             {...props}
@@ -10,7 +8,6 @@ export default function LambdaHeaderTitle(props : any) {
                 fontFamily: "JetBrains Mono, monospace",
                 fontWeight: "bold",
             }}
-
         >
             {props.title}
         </div>

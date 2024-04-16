@@ -32,12 +32,8 @@ public class Word {
     @Column(name = "is_known")
     private boolean isKnown;
 
-    @ManyToMany(mappedBy = "words")
-    private List<Collection> collections;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "word_id")
     private List<Example> examples;
-
-
 }

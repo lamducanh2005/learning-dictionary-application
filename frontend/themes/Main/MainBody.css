@@ -1,0 +1,12 @@
+.main-view-body {
+    padding: 150px 0 100px;
+}
+
+.main-view-body-welcome {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 36px;
+    font-weight: 700;
+    max-width: 860px;
+    margin: 0 auto 50px;
+    text-align: center;
+}

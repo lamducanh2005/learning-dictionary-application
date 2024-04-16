@@ -1,0 +1,64 @@
+.assistant-chat-display {
+    width: 100%;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.assistant-chat-display-group {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.assistant-chat-display-group:first-child {
+    margin-top: 50px;
+}
+
+.response-from-assistant,
+.request-from-profile {
+    display: flex;
+    gap: 20px;
+}
+
+.request-from-profile > .left,
+.response-from-assistant > .left {
+    min-width: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.response-from-assistant > .right,
+.request-from-profile > .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-right: 50px;
+}
+
+.response-from-assistant > .right > .assistant-name,
+.request-from-profile > .right > .profile-name {
+    font-weight: bold;
+}
+
+.response-from-assistant > .right > .request-type,
+.request-from-profile > .right > .request-type {
+    font-size: 14px;
+    color: #999;
+}
+
+.response-from-assistant > .right > .response-content,
+.request-from-profile > .right > .request-content {
+    margin-top: 20px;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.response-from-assistant > .left > .assistant-avatar {
+    width: 60px;
+    height: 90px;
+    background-image: url("../../../util/images/robot-image.png");
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+}

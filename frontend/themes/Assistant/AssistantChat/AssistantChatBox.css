@@ -1,0 +1,67 @@
+.assistant-chat-box {
+    display: flex;
+    gap: 5px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(200, 200, 200, 0.25);
+    width: 100%;
+    padding: 5px;
+    font-family: "JetBrains Mono", monospace;
+    position: sticky;
+    top: 80px;
+    backdrop-filter: blur(5px);
+}
+
+.assistant-chat-box-submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 45px;
+    aspect-ratio: 1 / 1;
+    background-color: rgba(50, 50, 50, 1);
+    border-radius: 5px;
+}
+
+.assistant-chat-box-input {
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(200, 200, 200, 0.25);
+    outline: 1px solid rgba(240, 240, 240, 0.25);
+    border-radius: 5px;
+    flex: 1;
+    resize: none;
+}
+
+.assistant-chat-box-input:focus {
+    outline: 1px solid rgba(220, 220, 220, 0.25);
+    box-shadow: 0 0 10px rgba(200, 200, 200, 0.25);
+}
+
+.assistant-chat-box-menu {
+    width: 180px;
+    height: 45px !important;
+    box-shadow: 0 0 5px rgba(200, 200, 200, 0.25) !important;
+    outline: 1px solid rgba(240, 240, 240, 0.25) !important;
+    background-color: rgba(255, 255, 255, 1) !important;
+    font-size: 14px !important;
+}
+
+.assistant-chat-box-menu > span:first-child {
+    /* CSS bất khả kháng */
+    overflow: hidden;
+    text-align: left;
+}
+
+.assistant-chat-box-menu:hover {
+    background-color: rgba(240, 240, 240, 1) !important;
+}
+
+.assistant-chat-box-menu-list {
+    padding: 5px !important;
+}
+
+.assistant-chat-box-menu-item {
+    font-size: 14px !important;
+}
+
+
+

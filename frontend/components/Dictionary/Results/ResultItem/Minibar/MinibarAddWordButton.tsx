@@ -1,26 +1,32 @@
 import {AddIcon} from "@chakra-ui/icons";
-import LambdaCollectionPopover from "Frontend/components/LambdaComponents/LambdaCollection/LambdaCollectionPopover";
+import 'Frontend/themes/Dictionary/Results/ResultItem/Minibar/MinibarAddWord.css';
+
+import {
+    Button,
+    Popover,
+    PopoverArrow,
+    PopoverBody,
+    PopoverCloseButton,
+    PopoverContent,
+    PopoverHeader,
+    PopoverTrigger
+} from "@chakra-ui/react";
+import MinibarAddWord from "Frontend/components/Dictionary/Results/ResultItem/Minibar/AddWord/MinibarAddWord";
 
 export default function MinibarAddWordButton() {
     return(
-        <LambdaCollectionPopover>
-        <div
-            className={"minibar-add-word-button"}
-            style={{
-                backgroundColor: '#ffffff',
-                borderRadius: '5px',
-                boxShadow: '0 0 10px #eee',
-                border: '1px solid #eee',
-                cursor: 'pointer',
-                height: '100%',
-                aspectRatio: '1 / 1',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-            }}
-        >
-            <AddIcon />
-        </div>
-        </LambdaCollectionPopover>
+        <Popover>
+            <PopoverTrigger>
+                <button className={"minibar-add-word-button"}><AddIcon/></button>
+            </PopoverTrigger>
+            <PopoverContent>
+                <PopoverArrow/>
+                <PopoverHeader>Thêm vào bộ sưu tập</PopoverHeader>
+                <PopoverCloseButton/>
+                <PopoverBody>
+                    <MinibarAddWord/>
+                </PopoverBody>
+            </PopoverContent>
+        </Popover>
     )
 }

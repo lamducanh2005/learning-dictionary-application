@@ -1,0 +1,100 @@
+.main-view-menu {
+    max-width: 840px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #eee;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.main-view-menu-item {
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    border: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-view-menu-item > .button {
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color: white;
+    border: 2px solid #333;
+    color: #333;
+    margin-top: 40px;
+    cursor: pointer;
+}
+
+.main-view-menu-item.dictionary {
+    grid-column: span 12;
+    padding: 75px 25px;
+    align-items: flex-start;
+    background-image: url("../../../util/images/book-image.png");
+    background-size: 750px;
+    background-repeat: no-repeat;
+    background-position: 380px 50%;
+}
+
+
+.main-view-menu-item.collection {
+    grid-column: span 12;
+    padding: 75px 25px;
+    align-items: flex-start;
+    background-image: url("../../../util/images/collection-image.png");
+    background-size: 600px;
+    background-repeat: no-repeat;
+    background-position: 280px 20%;
+}
+
+.main-view-menu-item.reading {
+    grid-column: span 6;
+}
+
+.main-view-menu-item.assistant {
+    grid-column: span 6;
+    padding: 50px 25px 200px;
+    background-image: url("../../../util/images/assistant-image.png");
+    background-size: 620px;
+    background-repeat: no-repeat;
+    background-position: 50% 220px;
+
+}
+
+.main-view-menu-item.dictionary > .title,
+.main-view-menu-item.collection > .title {
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.main-view-menu-item.reading > .title,
+.main-view-menu-item.assistant > .title {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+.main-view-menu-item.dictionary > .description,
+.main-view-menu-item.collection > .description {
+    font-size: 14px;
+    margin-top: 10px;
+    max-width: 50%;
+    text-align: justify;
+}
+
+.main-view-menu-item.reading > .description,
+.main-view-menu-item.assistant > .description {
+    font-size: 14px;
+    margin-top: 10px;
+    max-width: 75%;
+    text-align: center;
+}
+
+
+.main-view-menu-item.dictionary > .button {
+
+}

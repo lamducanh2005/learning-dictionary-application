@@ -1,0 +1,50 @@
+.minibar-add-word-button {
+    background-color: rgba(255, 255, 255, 1) !important;
+    border-radius: 5px !important;
+    border: 1px solid rgba(200, 200, 200, 0.1);
+    box-shadow: 0 0 10px rgba(200, 200, 200, 0.1);
+    cursor: pointer;
+    height: 100% !important;
+    aspect-ratio: 1 / 1;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    padding: 0 !important;
+    min-width: 0 !important;
+}
+
+.minibar-add-word {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    gap: 5px;
+}
+
+.minibar-add-word > .collection-item {
+    background-color: rgba(225, 225, 225, 0.75);
+    padding: 5px 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.minibar-add-word > .collection-item {
+    background-color: rgba(240, 240, 240, 0.75);
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
+}
+
+.minibar-add-word > .collection-item:hover {
+    background-color: rgba(230, 230, 230, 1);
+}
+
+.minibar-add-word > .collection-item.added {
+    background-color: rgba(211, 255, 218, 0.75);
+}
+
+
+.minibar-add-word > .collection-item.added:hover {
+    background-color: rgba(182, 241, 192, 0.75) !important;
+}
+

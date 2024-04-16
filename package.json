@@ -8,6 +8,7 @@
     "@choc-ui/chakra-autocomplete": "^5.3.1",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
+    "@google/generative-ai": "^0.6.0",
     "@hilla/form": "2.5.6",
     "@hilla/frontend": "2.5.6",
     "@hilla/generator-typescript-cli": "2.5.6",
@@ -91,7 +92,8 @@
     "@choc-ui/chakra-autocomplete": "$@choc-ui/chakra-autocomplete",
     "@chakra-ui/icons": "$@chakra-ui/icons",
     "dagre": "$dagre",
-    "reactflow": "$reactflow"
+    "reactflow": "$reactflow",
+    "@google/generative-ai": "$@google/generative-ai"
   },
   "vaadin": {
     "dependencies": {
@@ -135,6 +137,6 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "d91749fb9235876cfef92cb79c661f296122558db60a1eb4b066b1417eaef06e"
+    "hash": "824f5a7d6357773cbc7ee9f91e9927b035c70f374368aa3e64e4f080cbb6bce6"
   }
 }

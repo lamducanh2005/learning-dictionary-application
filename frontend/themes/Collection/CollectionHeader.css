@@ -1,0 +1,6 @@
+.collection-header {
+    position: sticky;
+    padding: 10px;
+    top: 0;
+    z-index: 1000;
+}

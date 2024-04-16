@@ -1,0 +1,6 @@
+.collection-create-button {
+    background-color: rgba(25, 25, 25, 1) !important;
+    width: 40px;
+    aspect-ratio: 1 / 1;
+    border-radius: 7px;
+}

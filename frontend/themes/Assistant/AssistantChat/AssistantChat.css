@@ -1,0 +1,10 @@
+.assistant-chat {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 860px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(200, 200, 200, 0.25);
+    padding: 10px;
+}

@@ -12,8 +12,8 @@ export default function DictionaryResultMinibar(props : any) {
 
     return(
         <div className={"dictionary-result-minibar"}>
-            <MinibarKnownWordMarker />
-            <div style={{width: '5px'}} />
+            {/*<MinibarKnownWordMarker />*/}
+            {/*<div style={{width: '5px'}} />*/}
             <MinibarAudioButton audioUrl={word.audioUrl} text={'US'}/>
             <div style={{width: '5px'}}/>
             <MinibarAudioButton audioUrl={word.audioUrl} text={'UK'}/>

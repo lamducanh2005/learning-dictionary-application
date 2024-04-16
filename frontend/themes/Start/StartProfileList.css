@@ -1,0 +1,31 @@
+.start-profile-list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(200, 200, 200, 0.2);
+    border: 1px solid #eee;
+    padding: 10px;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.start-profile-item {
+    background-color: rgba(255, 255, 255, 0.75);
+    padding: 20px;
+    display: flex;
+    gap: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(200, 200, 200, 0.2);
+    border: 1px solid #eee;
+    color: #333;
+    cursor: pointer;
+}
+
+.start-profile-item > .profile-name {
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+
+}

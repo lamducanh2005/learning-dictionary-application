@@ -3,13 +3,15 @@ import LambdaNavigationButton from "Frontend/components/LambdaComponents/LambdaN
 import LambdaHeaderTitle from "Frontend/components/LambdaComponents/LambdaHeader/LambdaHeaderTitle";
 import DictionarySearchBox from "Frontend/components/Dictionary/Search/DictionarySearchBox";
 import 'Frontend/themes/Dictionary/DictionaryHeader.css';
+import {useContext} from "react";
+import {ProfileContext} from "Frontend/App";
 
 export default function DictionaryHeader(props : any) {
+
+    const profile = useContext(ProfileContext);
+
     return(
-        <div
-            className={"dictionary-view-header"}
-            style={{ position: 'sticky', top: 0, zIndex: 1000, padding: 10}}
-        >
+        <div className={"dictionary-view-header"}>
             <LambdaHeader>
                 <LambdaNavigationButton/>
                 <div style={{width: "20px"}}/>

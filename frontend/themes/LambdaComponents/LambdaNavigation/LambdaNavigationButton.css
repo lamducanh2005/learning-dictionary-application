@@ -1,0 +1,12 @@
+.lambda-navigation-button {
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    box-shadow: #eee 0 0 5px;
+    border-radius: 5px;
+    height: 40px;
+    aspect-ratio: 1 / 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}

@@ -1,0 +1,19 @@
+body {
+    position: absolute;
+    margin: 0;
+    width: 100%;
+    height: 100vh;
+    font-family: "JetBrains Mono", monospace;
+    background-color: #f2f2fa !important;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#lambda-v2 {
+
+
+}

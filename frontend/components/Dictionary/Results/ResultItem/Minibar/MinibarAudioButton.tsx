@@ -11,14 +11,15 @@ export default function MinibarAudioButton(props : any) {
 
         const specialWord1 = (props.text === 'US') ? 'us_pron' : 'uk_pron';
         const specialWord2 = (props.text === 'US') ? '__us_1.mp3' : '__gb_1.mp3';
-        const specialWord = word.word + specialWord2;
+        var specialWord = word.word + specialWord2;
+        const specialCharacter = (specialWord.substring(0, 3) === 'con') ? 'x' : '';
+        specialWord = specialCharacter + specialWord;
         return 'https://www.oxfordlearnersdictionaries.com/media/english/'
             + specialWord1 + '/'
             + specialWord.substring(0, 1) + '/'
             + specialWord.substring(0, 3) + '/'
             + specialWord.substring(0, 5) + '/'
-            + word.word + specialWord2;
-
+            + specialCharacter + word.word + specialWord2;
     }
 
     return(

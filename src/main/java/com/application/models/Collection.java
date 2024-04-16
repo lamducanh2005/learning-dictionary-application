@@ -17,6 +17,9 @@ public class Collection {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "profile_id")
+    private Long profileId;
+
     @ManyToMany
     @JoinTable(
         name = "word_collection",
