@@ -34,7 +34,7 @@ export default function DevResultExampleItem(props: any) {
                 <div>Label:</div>
                 <input value={label} onChange={(e) => setLabel(e.target.value)}/>
             </div>
-            <div className={"wrapper"}>
+            <div className={"wrapper"}>s
                 <div>Ví dụ:</div>
                 <textarea value={viExample} onChange={(e) => setViExample(e.target.value)}/>
             </div>

@@ -1,0 +1,39 @@
+.dev-result-related {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.dev-result-related > .wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.dev-result-related > .wrapper > button {
+    background-color: black;
+    color: white;
+    padding: 5px 10px;
+}
+
+.dev-result-related-item {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
+    background-color: #ddd;
+    width: 100%;
+    padding: 5px;
+}
+
+.dev-result-related-item > .wrapper {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.dev-result-related-item > .wrapper > textarea,
+.dev-result-related-item > .wrapper > input {
+    flex: 1;
+    padding: 5px 10px;
+}

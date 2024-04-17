@@ -1,6 +1,5 @@
 package com.application.models;
 
-
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -40,4 +39,5 @@ public class Word {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "word_id")
     private List<Question> questions;
+
 }

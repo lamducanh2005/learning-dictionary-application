@@ -1,7 +1,7 @@
 import Example from "Frontend/generated/com/application/models/Example";
 import {useEffect, useState} from "react";
 import {ExampleService, WordService} from "Frontend/generated/endpoints";
-import DevResultExampleItem from "Frontend/views/Developer/Dictionary/DevDictionaryResults/DivResultExampleItem";
+import DevResultExampleItem from "Frontend/views/Developer/Dictionary/DevDictionaryResults/DevResultExampleItem";
 import 'Frontend/themes/Developer/DevDictionary/DevDictionaryResults/DevResultExamples.css'
 
 export default function DevResultExamples(props: any) {

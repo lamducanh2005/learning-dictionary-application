@@ -94,7 +94,8 @@
     "@chakra-ui/icons": "$@chakra-ui/icons",
     "dagre": "$dagre",
     "reactflow": "$reactflow",
-    "@google/generative-ai": "$@google/generative-ai"
+    "@google/generative-ai": "$@google/generative-ai",
+    "react-markdown": "$react-markdown"
   },
   "vaadin": {
     "dependencies": {
@@ -138,6 +139,6 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "824f5a7d6357773cbc7ee9f91e9927b035c70f374368aa3e64e4f080cbb6bce6"
+    "hash": "1756e682e436866996a7ccad38e676233655c57de62f58ad2913c6201ec1f1cb"
   }
 }
