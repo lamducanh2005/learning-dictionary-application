@@ -36,4 +36,8 @@ public class Word {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "word_id")
     private List<Example> examples;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinColumn(name = "word_id")
+    private List<Question> questions;
 }
