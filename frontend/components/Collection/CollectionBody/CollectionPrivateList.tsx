@@ -16,14 +16,14 @@ export default function CollectionPrivateList(props: any) {
 
     useEffect(() => {
         const updateCollections = async () => {
-            const response =
-                await CollectionService.getAllCollectionsByProfileId((profile.id) ? profile.id : 1);
-            setCollections(response);
-            console.table(response);
+            if (profile.id) {
+                const response =
+                    await CollectionService.getAllCollectionsByProfileId(profile.id);
+                setCollections(response);
+            }
         }
         updateCollections();
-
-    }, [isAdding]);
+    }, [isAdding, profile]);
 
     const handleAdd = async (newCollection: Collection) => {
         await CollectionService.addCollection(newCollection);
@@ -38,9 +38,14 @@ export default function CollectionPrivateList(props: any) {
                 <CollectionCreateButton onAdd={handleAdd}/>
             </div>
             <div className={"body"}>
-                {collections.map((collection) => {
-                    return <CollectionPrivateItem onClick={props.onOpen} key={collection.id} collection={collection}/>
-                })}
+                {
+                    (collections.length === 0) ?
+                        <div className={"placeholder"}>Bạn chưa tạo bộ sưu tập nào.</div> :
+                        collections.map((collection) => {
+                            return <CollectionPrivateItem onClick={props.onOpen} key={collection.id}
+                                                          collection={collection}/>
+                        })
+                }
             </div>
         </div>
     )
