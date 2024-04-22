@@ -1,0 +1,22 @@
+.panel-word-list {
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    grid-column: span 8;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(200, 200, 200, 0.1);
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 10px;
+    /*align-items: start;*/
+    align-content: start;
+}
+
+.panel-word-list > .panel-word-list-item {
+    grid-column: span 4;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow: 0 0 5px rgba(200, 200, 200, 0.1);
+    border: 1px solid rgba(240, 240, 240, 0.5);
+    border-radius: 5px;
+    padding: 5px 10px;
+}
+

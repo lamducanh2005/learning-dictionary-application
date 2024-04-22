@@ -3,6 +3,8 @@ package com.application.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Entity
 @Getter
 @Setter
@@ -17,13 +19,5 @@ public class Profile {
 
     @Column(name = "theme")
     private String theme;
-
-    public void setTheme(String theme) {
-        if (theme.equals("dark")) {
-            this.theme = "dark";
-        } else {
-            this.theme = "light";
-        }
-    }
 
 }

@@ -1,0 +1,33 @@
+.panel-level-proportion {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    grid-column: span 4;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(200, 200, 200, 0.1);
+}
+
+.panel-level-proportion > .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.panel-level-proportion > .text > .title {
+    font-size: 14px;
+    color: #999;
+}
+
+.panel-level-proportion > .text > .difficulty {
+    font-size: 36px;
+    font-weight: 600;
+}
+
+.panel-level-proportion > .chart {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100px;
+}
+

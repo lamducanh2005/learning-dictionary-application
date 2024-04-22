@@ -8,6 +8,7 @@ export default function CollectionPrivateItem(props: any) {
             animate={{scale: 1, opacity: 1}}
             whileHover={{scale: 1.02}}
             whileTap={{scale: 0.95}}
+            onClick={() => props.onClick(props.collection.id)}
         >
             <div className={"title"}>{props.collection.name}</div>
             <div className={"description"}>{props.collection.description}</div>

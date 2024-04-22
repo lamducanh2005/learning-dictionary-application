@@ -1,0 +1,23 @@
+.lambda-dictionary-search-results {
+    width: 720px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.lambda-dictionary-result-item {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 10px;
+    width: 100%;
+    margin-bottom: 100px;
+    font-family: "JetBrains Mono", monospace;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.25);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 10px rgba(200, 200, 200, 0.2);
+    z-index: 1;
+}
+

@@ -1,0 +1,17 @@
+.panel-actions {
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 10px;
+    grid-column: span 4;
+    padding: 10px;
+    box-shadow: 0 0 5px rgba(200, 200, 200, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.panel-actions > .panel-action-button {
+    background-color: #eee;
+    border-radius: 5px;
+    padding: 5px 10px;
+
+}

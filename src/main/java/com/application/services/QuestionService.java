@@ -8,6 +8,8 @@ import dev.hilla.BrowserCallable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @BrowserCallable
 @AnonymousAllowed
 @Service
@@ -34,6 +36,11 @@ public class QuestionService {
         question.getAnswers().add(answer);
         questionRepository.save(question);
     }
+
+    public Question getQuestionById(Long id) {
+        return questionRepository.findQuestionById(id);
+    }
+
 
 
 }

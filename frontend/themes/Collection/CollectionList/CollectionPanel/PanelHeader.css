@@ -1,0 +1,38 @@
+.panel-header {
+    padding: 30px 10px;
+    display: flex;
+    justify-content: space-between;
+    grid-column: span 12;
+}
+
+.panel-header > .left {
+    display: flex;
+    flex-direction: column;
+}
+
+.panel-header > .left > .collection-name {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.panel-header > .left > .collection-description {
+    font-size: 14px;
+    color: #999;
+    max-width: 360px;
+    text-align: justify;
+}
+
+.panel-header > .right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.panel-header > .right > .button {
+    padding: 5px 10px;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}

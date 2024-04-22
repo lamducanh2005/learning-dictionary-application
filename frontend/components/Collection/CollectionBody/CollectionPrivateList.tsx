@@ -3,8 +3,9 @@ import Collection from "Frontend/generated/com/application/models/Collection";
 import {CollectionService} from "Frontend/generated/endpoints";
 import {ProfileContext} from "Frontend/App";
 import 'Frontend/themes/Collection/CollectionList/CollectionPrivateList.css';
-import CollectionPrivateItem from "Frontend/components/Collection/CollectionBody/PrivateList/CollectionPrivateItem";
-import CollectionCreateButton from "Frontend/components/Collection/CollectionBody/PrivateList/CollectionCreateButton";
+import CollectionPrivateItem from "Frontend/components/Collection/CollectionBody/CollectionList/CollectionPrivateItem";
+import CollectionCreateButton
+    from "Frontend/components/Collection/CollectionBody/CollectionList/CollectionCreateButton";
 import {set} from "@polymer/polymer/lib/utils/path";
 
 export default function CollectionPrivateList(props: any) {
@@ -38,7 +39,7 @@ export default function CollectionPrivateList(props: any) {
             </div>
             <div className={"body"}>
                 {collections.map((collection) => {
-                    return <CollectionPrivateItem key={collection.id} collection={collection}/>
+                    return <CollectionPrivateItem onClick={props.onOpen} key={collection.id} collection={collection}/>
                 })}
             </div>
         </div>

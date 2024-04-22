@@ -1,0 +1,6 @@
+.collection-body {
+    padding: 150px 0 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
