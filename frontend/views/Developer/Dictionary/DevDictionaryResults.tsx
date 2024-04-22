@@ -6,6 +6,7 @@ import DevResultExplain from "Frontend/views/Developer/Dictionary/DevDictionaryR
 import DevResultRelated from "Frontend/views/Developer/Dictionary/DevDictionaryResults/DevResultRelated";
 import DevResultLevel from "Frontend/views/Developer/Dictionary/DevDictionaryResults/DevResultLevel";
 import DevResultExamples from "Frontend/views/Developer/Dictionary/DevDictionaryResults/DevResultExamples";
+import DevResultQuestions from "Frontend/views/Developer/Dictionary/DevDictionaryResults/DevResultQuestions";
 
 
 export default function DevDictionaryResults(props: any) {
@@ -18,6 +19,7 @@ export default function DevDictionaryResults(props: any) {
             <DevResultExplain wordId={props.id}/>
             <DevResultExamples wordId={props.id}/>
             <DevResultRelated wordId={props.id}/>
+            <DevResultQuestions wordId={props.id}/>
         </div>
     );
 }

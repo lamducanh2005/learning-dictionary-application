@@ -2,6 +2,7 @@ package com.application.services;
 
 import com.application.models.Answer;
 import com.application.models.Question;
+import com.application.repositories.AnswerRepository;
 import com.application.repositories.QuestionRepository;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.BrowserCallable;
@@ -18,6 +19,9 @@ public class QuestionService {
     @Autowired
     private QuestionRepository questionRepository;
 
+    @Autowired
+    private AnswerRepository answerRepository;
+
     public void addQuestion(Question question) {
         questionRepository.save(question);
     }
@@ -32,6 +36,14 @@ public class QuestionService {
         questionRepository.save(question);
     }
 
+    public void addAnswer(Answer answer) {
+        addAnswerToQuestion(answer.getQuestionId(), answer);
+    }
+
+    public void setAnswer(Answer answer) {
+        answerRepository.save(answer);
+    }
+
     public void addAnswerToQuestion(Question question, Answer answer) {
         question.getAnswers().add(answer);
         questionRepository.save(question);
@@ -42,5 +54,7 @@ public class QuestionService {
     }
 
 
-
+    public List<Question> getQuestionByWordId(Long wordId) {
+        return questionRepository.findQuestionByWordId(wordId);
+    }
 }

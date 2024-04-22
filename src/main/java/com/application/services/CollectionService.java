@@ -1,10 +1,10 @@
 package com.application.services;
 
 import com.application.models.Collection;
+import com.application.models.ProfileQuestion;
+import com.application.models.Question;
 import com.application.models.Word;
-import com.application.repositories.CollectionRepository;
-import com.application.repositories.ProfileWordRepository;
-import com.application.repositories.WordRepository;
+import com.application.repositories.*;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.BrowserCallable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +27,12 @@ public class CollectionService {
 
     @Autowired
     private ProfileWordRepository profileWordRepository;
+
+    @Autowired
+    private QuestionRepository questionRepository;
+
+    @Autowired
+    private ProfileQuestionRepository profileQuestionRepository;
 
     public void addWordToCollection(Long wordId, Long collectionId) {
         Word word = wordRepository.findWordById(wordId);
@@ -113,6 +119,32 @@ public class CollectionService {
         return totalMastery / collection.getWords().size();
     }
 
+    public Question getQuestionForWord(Long wordId, Long profileId) {
+        Long currentMasteryRate = profileWordRepository.findMasteryRateByProfileIdAndWordId(profileId, wordId);
+        List<ProfileQuestion> pq = profileQuestionRepository.findByProfileIdOrderByNumberAsc(profileId);
+        Long targetQuestionId = pq.get(0).getQuestionId();
 
+        for (ProfileQuestion profileQuestion : pq) {
+            if (profileQuestion.getNumber() > pq.get(0).getNumber()) break;
+            Question q = questionRepository.findQuestionById(profileQuestion.getQuestionId());
+            if (q.getMasteryMax() - currentMasteryRate <= 25) {
+                targetQuestionId = profileQuestion.getQuestionId();
+                break;
+            }
+        }
+        return questionRepository.findQuestionById(targetQuestionId);
+    }
+
+    public List<Question> getQuestionsForCollection(Long collectionId, Long profileId) {
+        List<Word> wordList = collectionRepository.findAllWordsByCollectionId(collectionId);
+        List<Question> questionList = new ArrayList<>();
+
+        for (Word word : wordList) {
+            Question q = this.getQuestionForWord(word.getId(), profileId);
+            questionList.add(q);
+        }
+
+        return questionList;
+    }
 
 }
