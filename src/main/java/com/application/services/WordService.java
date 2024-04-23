@@ -1,7 +1,9 @@
 package com.application.services;
 
 import com.application.models.Example;
+import com.application.models.ProfileWord;
 import com.application.models.Word;
+import com.application.repositories.ProfileWordRepository;
 import com.application.repositories.WordRepository;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.BrowserCallable;
@@ -24,6 +26,9 @@ public class WordService {
 
     @Autowired
     private WordRepository wordRepository;
+
+    @Autowired
+    private ProfileWordRepository profileWordRepository;
 
     public Word getWordById(Long wordId) {
         return wordRepository.findWordById(wordId);
@@ -62,6 +67,75 @@ public class WordService {
         Word word = wordRepository.findWordById(id);
         word.setExamples(examples);
         wordRepository.save(word);
+    }
+
+    public void increaseMasteryRate(Long wordId, Long profileId, Long masteryRateIncrease) {
+        ProfileWord pw = profileWordRepository.findProfileWordByProfileIdAndWordId(profileId, wordId);
+        if (pw == null) {
+            pw = new ProfileWord();
+            pw.setProfileId(profileId);
+            pw.setWordId(wordId);
+            pw.setMasteryRate(0L);
+        }
+
+        pw.setMasteryRate(pw.getMasteryRate() + masteryRateIncrease);
+        if (pw.getMasteryRate() < 0) pw.setMasteryRate(0L);
+        else if (pw.getMasteryRate() > 100) pw.setMasteryRate(100L);
+        profileWordRepository.save(pw);
+    }
+
+    /**
+     * Hàm thực hiện việc tăng giảm độ thành thạo của từ vựng trong hồ sơ.
+     *
+     * @param wordId              là id của từ vựng
+     * @param profileId           là id của hồ sơ
+     * @param masteryRateIncrease là số nguyên đại số, dương là tăng, âm là giảm
+     * @param masteryMax          là trình độ của câu hỏi
+     * @return trả về hiệu số giữa trình độ trước và sau khi tăng giảm
+     */
+    public Long increaseMasteryRateWithMasteryMax(Long wordId, Long profileId, Long masteryRateIncrease, Long masteryMax) {
+        ProfileWord pw = profileWordRepository.findProfileWordByProfileIdAndWordId(profileId, wordId);
+        if (pw == null) {
+            pw = new ProfileWord();
+            pw.setProfileId(profileId);
+            pw.setWordId(wordId);
+            pw.setMasteryRate(0L);
+        }
+
+        Long beforeMasteryRate = pw.getMasteryRate();
+
+        if (masteryRateIncrease > 0) {
+            /*
+             * NGUYÊN TẮC CỘNG
+             * Nếu trình độ hiện tại vượt qua trình độ câu hỏi, thì giữ nguyên điểm thành thạo
+             * Nếu trình độ hiện tại cộng thêm mà vượt quá trình độ câu hỏi, thì chỉ lấy phần tối đa có thể
+             * Nếu trình độ hiện tại cộng thêm mà không vượt quá trình độ câu hỏi, thì cộng bình thường
+             */
+
+            if (beforeMasteryRate >= masteryMax) ;
+            else if (beforeMasteryRate + masteryRateIncrease >= masteryMax)
+                pw.setMasteryRate(masteryMax);
+            else
+                pw.setMasteryRate(beforeMasteryRate + masteryRateIncrease);
+        } else if (masteryRateIncrease < 0) {
+            /*
+             * NGUYÊN TẮC TRỪ
+             * Nếu trình độ hiện tại hơn trình độ câu hỏi, thì trừ gấp đôi điểm
+             * Nếu trình độ hiện tại phù hợp với câu hỏi, thì trừ bình thường và không kéo trình độ xuống
+             * Nếu trình độ hiện tại thấp hơn trình độ câu hỏi, thì không trừ
+             * Nếu trình độ xuống đến con số âm, thì đặt lại bằng 0
+             */
+            if (beforeMasteryRate >= masteryMax)
+                pw.setMasteryRate(beforeMasteryRate + masteryRateIncrease * 2);
+            else if (beforeMasteryRate + masteryRateIncrease >= masteryMax - 25)
+                pw.setMasteryRate(Math.max(beforeMasteryRate + masteryRateIncrease, masteryMax - 25));
+
+            if (pw.getMasteryRate() < 0) pw.setMasteryRate(0L);
+        }
+
+        Long afterMasteryRate = pw.getMasteryRate();
+        profileWordRepository.save(pw);
+        return afterMasteryRate - beforeMasteryRate;
     }
 
 

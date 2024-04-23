@@ -119,32 +119,16 @@ public class CollectionService {
         return totalMastery / collection.getWords().size();
     }
 
-    public Question getQuestionForWord(Long wordId, Long profileId) {
-        Long currentMasteryRate = profileWordRepository.findMasteryRateByProfileIdAndWordId(profileId, wordId);
-        List<ProfileQuestion> pq = profileQuestionRepository.findByProfileIdOrderByNumberAsc(profileId);
-        Long targetQuestionId = pq.get(0).getQuestionId();
+    public List<Question> getQuestionsForCollection(Long collectionId) {
+        List<Question> questions = new ArrayList<>();
+        Collection collection = collectionRepository.findCollectionById(collectionId);
 
-        for (ProfileQuestion profileQuestion : pq) {
-            if (profileQuestion.getNumber() > pq.get(0).getNumber()) break;
-            Question q = questionRepository.findQuestionById(profileQuestion.getQuestionId());
-            if (q.getMasteryMax() - currentMasteryRate <= 25) {
-                targetQuestionId = profileQuestion.getQuestionId();
-                break;
-            }
+        for (Word word : collection.getWords()) {
+            List<Question> wordQuestions = questionRepository.findQuestionByWordId(word.getId());
+            questions.addAll(wordQuestions);
         }
-        return questionRepository.findQuestionById(targetQuestionId);
-    }
-
-    public List<Question> getQuestionsForCollection(Long collectionId, Long profileId) {
-        List<Word> wordList = collectionRepository.findAllWordsByCollectionId(collectionId);
-        List<Question> questionList = new ArrayList<>();
-
-        for (Word word : wordList) {
-            Question q = this.getQuestionForWord(word.getId(), profileId);
-            questionList.add(q);
-        }
-
-        return questionList;
+        java.util.Collections.shuffle(questions);
+        return questions;
     }
 
 }
