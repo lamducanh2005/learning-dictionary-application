@@ -7,12 +7,7 @@ import com.application.repositories.ProfileWordRepository;
 import com.application.repositories.WordRepository;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.BrowserCallable;
-import dev.hilla.Endpoint;
-import dev.hilla.crud.CrudRepositoryService;
-import jakarta.transaction.Transactional;
-import org.junit.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -30,18 +25,40 @@ public class WordService {
     @Autowired
     private ProfileWordRepository profileWordRepository;
 
+    /**
+     * Lấy từ theo id của nó
+     *
+     * @param wordId là id của từ
+     * @return trả về Word theo yêu cầu
+     */
     public Word getWordById(Long wordId) {
         return wordRepository.findWordById(wordId);
     }
 
+    /**
+     * Lấy tất cả các từ có tên theo yêu cầu
+     *
+     * @param word là tên của từ
+     * @return danh sách các từ có tên theo yêu cầu
+     */
     public List<Word> getWordsByWord(String word) {
         return wordRepository.findWordsByWord(word);
     }
 
+    /**
+     * Lấy danh sách các từ có tên theo tiền tố nào đó
+     * @param prefix là tiền tố của từ
+     * @return danh sách các từ có tên theo yêu cầu
+     */
     public List<Word> getWordsByPrefix(String prefix) {
         return wordRepository.findWordsByPrefix(prefix);
     }
 
+    /**
+     * Lấy danh sách gợi ý từ theo tiền tố phục vụ cho thanh tìm kiếm
+     * @param prefix là tiền tố của từ
+     * @return danh sách gợi ý từ theo yêu cầu
+     */
     public List<String> getSuggestionsByPrefix(String prefix) {
         Set<String> wordSet = wordRepository.findWordNameByPrefix(prefix);
         return new ArrayList<>(wordSet);
@@ -68,6 +85,7 @@ public class WordService {
         word.setExamples(examples);
         wordRepository.save(word);
     }
+
 
     public void increaseMasteryRate(Long wordId, Long profileId, Long masteryRateIncrease) {
         ProfileWord pw = profileWordRepository.findProfileWordByProfileIdAndWordId(profileId, wordId);
