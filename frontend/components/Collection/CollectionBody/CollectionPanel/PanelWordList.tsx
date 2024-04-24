@@ -3,7 +3,7 @@ import {useContext, useState} from "react";
 import {CollectionContext} from "Frontend/components/Collection/CollectionBody";
 import Word from "Frontend/generated/com/application/models/Word";
 import PanelWordListItem
-    from "Frontend/components/Collection/CollectionBody/CollectionList/CollectionPanel/PanelWordListItem";
+    from "Frontend/components/Collection/CollectionBody/CollectionPanel/PanelWordListItem";
 import {CollectionService} from "Frontend/generated/endpoints";
 
 export default function PanelWordList() {

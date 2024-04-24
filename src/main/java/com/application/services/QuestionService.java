@@ -57,4 +57,12 @@ public class QuestionService {
     public List<Question> getQuestionByWordId(Long wordId) {
         return questionRepository.findQuestionByWordId(wordId);
     }
+
+    public void setQuestionById(Long id, String question) {
+        questionRepository.updateQuestionById(id, question);
+    }
+
+    public void setMasteryMaxById(Long id, Long masteryMax) {
+        questionRepository.updateMasteryMaxById(id, masteryMax);
+    }
 }

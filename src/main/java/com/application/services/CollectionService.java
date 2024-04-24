@@ -119,12 +119,31 @@ public class CollectionService {
         return totalMastery / collection.getWords().size();
     }
 
+    public Double getExactMasteryOfCollection(Long collectionId) {
+        Collection collection = collectionRepository.findCollectionById(collectionId);
+        Double totalMastery = 0.0;
+
+        if (collection == null) return 0.0;
+        if (collection.getWords().isEmpty()) return 0.0;
+
+        for (Word word : collection.getWords()) {
+            Long masteryRate = profileWordRepository.findMasteryRateByProfileIdAndWordId(collection.getProfileId(), word.getId());
+            if (masteryRate != null) totalMastery += masteryRate;
+        }
+
+        return totalMastery / collection.getWords().size();
+    }
+
     public List<Question> getQuestionsForCollection(Long collectionId) {
         List<Question> questions = new ArrayList<>();
         Collection collection = collectionRepository.findCollectionById(collectionId);
 
         for (Word word : collection.getWords()) {
             List<Question> wordQuestions = questionRepository.findQuestionByWordId(word.getId());
+            for (Question question : wordQuestions) {
+                Collections.shuffle(question.getAnswers());
+            }
+
             questions.addAll(wordQuestions);
         }
         java.util.Collections.shuffle(questions);

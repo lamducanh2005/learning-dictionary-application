@@ -12,12 +12,13 @@ import {
     PopoverTrigger
 } from "@chakra-ui/react";
 import MinibarAddWord from "Frontend/components/Dictionary/Results/ResultItem/Minibar/AddWord/MinibarAddWord";
+import {motion} from "framer-motion";
 
 export default function MinibarAddWordButton() {
     return(
         <Popover>
             <PopoverTrigger>
-                <button className={"minibar-add-word-button"}><AddIcon/></button>
+                <motion.button className={"minibar-add-word-button"}><AddIcon/></motion.button>
             </PopoverTrigger>
             <PopoverContent>
                 <PopoverArrow/>

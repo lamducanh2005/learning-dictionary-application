@@ -1,0 +1,59 @@
+.collection-mastering-end {
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    height: 100%;
+    padding: 10px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 10px;
+}
+
+.collection-mastering-end > .header {
+    grid-column: span 12;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.collection-mastering-end > .increase-mastery,
+.collection-mastering-end > .decrease-mastery,
+.collection-mastering-end > .question-answered,
+.collection-mastering-end > .collection-mastery-change {
+    grid-column: span 4;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #eee;
+}
+
+.collection-mastering-end > .collection-mastery-change {
+    grid-column: span 4;
+}
+
+
+.collection-mastering-end .text {
+    font-size: 14px;
+    color: #aaa;
+}
+
+.collection-mastering-end .number {
+    font-size: 32px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.collection-mastering-end > .increase-mastery > .number,
+.collection-mastery-change > .number.increase {
+    color: #2bb930;
+}
+
+.collection-mastering-end > .decrease-mastery > .number,
+.collection-mastery-change > .number.decrease {
+    color: #d74f44;
+}

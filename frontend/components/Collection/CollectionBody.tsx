@@ -1,6 +1,6 @@
 import CollectionPublicList from "Frontend/components/Collection/CollectionBody/CollectionPublicList";
 import CollectionPrivateList from "Frontend/components/Collection/CollectionBody/CollectionPrivateList";
-import CollectionPanel from "Frontend/components/Collection/CollectionBody/CollectionList/CollectionPanel";
+import CollectionPanel from "Frontend/components/Collection/CollectionBody/CollectionPanel";
 import Collection from "Frontend/generated/com/application/models/Collection";
 import {createContext, useRef, useState} from "react";
 import 'Frontend/themes/Collection/CollectionBody.css';
@@ -30,7 +30,6 @@ export default function CollectionBody() {
                 <div style={{padding: 50,}} ref={startOfPanel}/>
                 {isAnyOpen ? <CollectionPanel key={collection.id}/> : <></>}
             </CollectionContext.Provider>
-
         </div>
     )
 }

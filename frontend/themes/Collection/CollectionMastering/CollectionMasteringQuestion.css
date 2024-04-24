@@ -1,0 +1,89 @@
+.collection-mastering-question {
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.01);
+    padding: 20px;
+}
+
+.question-information-bar {
+    display: flex;
+    font-size: 14px;
+    gap: 10px;
+}
+
+.question-information-bar > .question-index {
+    padding: 3px 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 5px;
+}
+
+.question-information-bar > .question-timer {
+    padding: 3px 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+
+}
+
+.question-content {
+    padding: 30px 20px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.question-answers {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(50px, auto);;
+    gap: 10px;
+    padding: 0 20px;
+}
+
+.question-answers > .question-answer {
+    display: flex;
+    background-color: #eee;
+    padding: 5px;
+    border-radius: 10px;
+    align-items: center;
+    cursor: pointer;
+}
+
+.question-answers > .question-answer > .question-answer-index {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border-radius: 10px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    aspect-ratio: 1 / 1;
+    max-width: 44px;
+    transition: all ease-in-out 100ms;
+}
+
+.question-answers > .question-answer:hover > .question-answer-index {
+    background-color: #0065e1;
+    transition: all ease-in-out 100ms;
+}
+
+.question-answers > .question-answer > .question-answer-content {
+    padding: 10px 20px;
+}
+
+.question-information-bar > .question-result {
+    padding: 3px 10px;
+    background-color: #ddd;
+    border-radius: 5px;
+}
+
+.question-information-bar > .question-result.increase {
+    background-color: #daffd3;
+    color: #299115;
+}
+
+.question-information-bar > .question-result.decrease {
+    background-color: #ffdede;
+    color: #d80000;
+}

@@ -10,8 +10,15 @@
 }
 
 .panel-actions > .panel-action-button {
-    background-color: #eee;
+    background-color: #fff;
     border-radius: 5px;
     padding: 5px 10px;
+    box-shadow: 0 0 10px rgba(200, 200, 200, 0.1);
+    border: 1px solid #eee;
+}
 
+.panel-actions > .panel-action-button.learning,
+.panel-actions > .panel-action-button.mastering {
+
+    color: #3454ce;
 }

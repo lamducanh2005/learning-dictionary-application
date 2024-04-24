@@ -18,7 +18,7 @@ export default function PanelHeader() {
                 <div className={"collection-description"}>{collection.description}</div>
             </div>
             <div className={"right"}>
-                <button className={"button"}>Click here</button>
+                {/*<button className={"button"}>Click here</button>*/}
             </div>
 
         </div>

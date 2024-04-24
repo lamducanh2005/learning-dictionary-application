@@ -1,8 +1,10 @@
+import {motion} from "framer-motion";
+
 export default function LambdaAudioButton(props : any) {
     return(
 
         props.audioUrl === "-" ? <></> :
-            <div
+            <motion.div
                 className={"lambda-audio-button"}
                 style={props.style}
                 onClick={() => {
@@ -10,8 +12,9 @@ export default function LambdaAudioButton(props : any) {
                     audio.play();
                     console.log(props.audioUrl);
                 }}
+                whileTap={{scale: 0.8}}
             >
                 {props.children}
-            </div>
+            </motion.div>
     )
 }

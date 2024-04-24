@@ -1,0 +1,31 @@
+.collection-mastering-overlay {
+    background-color: rgba(100, 100, 100, 0.25) !important;
+    /*backdrop-filter: blur(5px) !important;*/
+}
+
+.collection-mastering {
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05) !important;
+    min-width: 860px;
+    /*min-height: 500px;*/
+    border-radius: 10px !important;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.collection-mastering .skip-button,
+.collection-mastering .end-button {
+    padding: 5px 15px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+.collection-mastering .skip-button {
+    background-color: #ddd;
+    color: #9f1717;
+}
+
+.collection-mastering .end-button {
+    color: #ddd;
+    background-color: #d52020;
+}
