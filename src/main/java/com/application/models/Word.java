@@ -5,6 +5,22 @@ import lombok.*;
 
 import java.util.List;
 
+/**
+ * Lớp mô tả dữ liệu từ vựng trong ứng dụng Lambda.
+ *
+ * @author lamducanh2005
+ * <p>
+ * Thuộc tính:
+ * - id: mã định danh từ vựng
+ * - word: tên của từ vựng
+ * - type: loại từ vựng
+ * - level: cấp độ của từ vựng trên thang CEFR
+ * - explain: giải thích nghĩa của từ vựng
+ * - audioUrl: đường dẫn đến file âm thanh phát âm từ vựng
+ * - examples: danh sách các ví dụ sử dụng từ vựng
+ * - questions: danh sách các câu hỏi ôn tập của từ vựng
+ */
+
 @Entity @Getter @Setter
 @Table(name = "words")
 public class Word {

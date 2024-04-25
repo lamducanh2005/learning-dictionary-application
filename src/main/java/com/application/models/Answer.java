@@ -4,6 +4,17 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Lớp mô tả dữ liệu Câu trả lời cho câu hỏi ôn tập từ vựng trong ứng dụng Lambda.
+ *
+ * @author lamducanh2005
+ * <p>
+ * Thuộc tính:
+ * - id: mã định danh câu trả lời
+ * - questionId: mã định danh câu hỏi mà câu trả lời này thuộc về
+ * - answer: nội dung câu trả lời
+ * - masteryIncrease: số lượng điểm thành thạo thay đổi khi trả lời đúng câu hỏi
+ */
 @Entity
 @Setter
 @Getter

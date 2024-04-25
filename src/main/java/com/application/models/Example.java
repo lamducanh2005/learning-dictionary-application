@@ -3,6 +3,19 @@ package com.application.models;
 import jakarta.persistence.*;
 import lombok.*;
 
+/**
+ * Lớp mô tả dữ liệu Ví dụ từ vựng trong ứng dụng Lambda.
+ *
+ * @author lamducanh2005
+ * <p>
+ * Thuộc tính:
+ * - id: mã định danh ví dụ
+ * - label: nhãn của ví dụ
+ * - viExample: phần tiếng Việt của ví dụ
+ * - enExample: phần tiếng Anh của ví dụ
+ * - wordId: mã định danh từ vựng mà ví dụ này liên quan đến
+ */
+
 @Entity
 @Getter
 @Setter

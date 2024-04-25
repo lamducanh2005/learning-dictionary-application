@@ -5,6 +5,16 @@ import lombok.*;
 
 import java.util.List;
 
+/**
+ * Lớp mô tả dữ liệu Hồ sơ người dùng trong ứng dụng Lambda.
+ *
+ * @author lamducanh2005
+ * <p>
+ * Thuộc tính:
+ * - id: mã định danh hồ sơ người dùng
+ * - name: tên của hồ sơ người dùng
+ */
+
 @Entity
 @Getter
 @Setter

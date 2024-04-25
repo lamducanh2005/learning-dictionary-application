@@ -4,6 +4,17 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
+/**
+ * Lớp mô tả dữ liệu So sánh từ vựng trong ứng dụng Lambda.
+ * <p>
+ * Thuộc tính:
+ * - id: mã định danh so sánh từ vựng
+ * - wordId: mã định danh từ vựng gốc của so sánh này
+ * - comparedWord: từ vựng được so sánh
+ * - explaining: phần so sánh và giải thích giữa hai từ
+ * - score: điểm so sánh sự tương đồng giữa hai từ
+ */
+
 @Entity
 @Getter
 @Setter
