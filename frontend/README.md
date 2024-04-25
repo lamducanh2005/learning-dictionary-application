@@ -5,7 +5,7 @@
 - <b>/views: </b> chứa tệp view cho từng tính năng.
 - <b>/components: </b> chứa các thành phần con của view.
 - <b>/themes: </b> chứa các tệp CSS định kiểu giao diện.
-- <b>/util: </b> chứa các hàm dùng chung cho nhiều tính năng.
+- <b>/util: </b> chứa các tệp phương tiện như ảnh hoặc âm thanh.
 
 
 - <b>App.tsx: </b> là tệp React cao nhất của ứng dụng.
