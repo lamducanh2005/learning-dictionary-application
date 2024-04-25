@@ -52,7 +52,7 @@ sẵn để bạn yêu cầu trợ lý trong một số tác vụ phổ biến. 
 cầu từ người dùng:
 
 | Tác vụ có sẵn   | Chức năng                                                      |
-    |-----------------|----------------------------------------------------------------|
+|-----------------|----------------------------------------------------------------|
 | Dịch Anh - Việt | Dịch một cụm từ hoặc một đoạn văn từ tiếng Anh sang tiếng Việt |
 | Dịch Việt - Anh | Dịch một cụm từ hoặc một đoạn văn từ tiếng Việt sang tiếng Anh |
 | Tìm đồng nghĩa  | Tìm từ đồng nghĩa và nêu ra điểm giống và khác nhau            |
