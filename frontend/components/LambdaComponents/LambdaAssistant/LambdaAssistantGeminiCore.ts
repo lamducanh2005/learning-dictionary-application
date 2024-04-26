@@ -1,18 +1,18 @@
 import {GoogleGenerativeAI, HarmBlockThreshold, HarmCategory} from "@google/generative-ai";
-import {useEffect, useState} from "react";
 
 const MODEL_NAME = "gemini-1.0-pro";
-const API_KEY = "AIzaSyA680XOSflL0iM1CMQDuPsb-Z2e_MX3JBU";
-export default async function LambdaAssistantCore(request: string) {
-
-    var response = '-'
+const API_KEY = "AIzaSyDm9O71HRNcymY_0ODGLbNaIbatbl1TTH8";
+export default async function LambdaAssistantGeminiCore(request: string) {
 
     const runChat = async () => {
         const genAI = new GoogleGenerativeAI(API_KEY);
         const model = genAI.getGenerativeModel({model: MODEL_NAME});
 
         const generationConfig = {
-            temperature: 0.9, topK: 1, topP: 1, maxOutputTokens: 2048,
+            temperature: 1,
+            topK: 0,
+            topP: 0.95,
+            maxOutputTokens: 8192,
         };
 
         const safetySettings = [
@@ -35,7 +35,9 @@ export default async function LambdaAssistantCore(request: string) {
         ];
 
         const chat = model.startChat({
-            generationConfig, safetySettings, history: []
+            generationConfig,
+            safetySettings,
+            history: [],
         });
 
         const result = await chat.sendMessage(request);

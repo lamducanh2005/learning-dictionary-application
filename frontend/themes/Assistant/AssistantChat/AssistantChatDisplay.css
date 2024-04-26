@@ -47,16 +47,24 @@
     color: #999;
 }
 
-.response-from-assistant > .right > .response-content,
-.request-from-profile > .right > .request-content {
+.response-from-assistant .response-content,
+.request-from-profile .request-content {
     margin-top: 20px;
     font-size: 14px;
     text-align: justify;
     /*white-space: pre-line;*/
 }
 
-.response-from-assistant > .right > .response-content ul {
+.request-from-profile .request-content ul,
+.request-from-profile .request-content ol,
+.response-from-assistant .response-content ul,
+.response-from-assistant .response-content ol {
     padding-left: 50px;
+}
+
+.request-from-profile .request-content p,
+.response-from-assistant .response-content p {
+    text-indent: 2em;
 }
 
 .response-from-assistant > .left > .assistant-avatar {

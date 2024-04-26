@@ -7,7 +7,10 @@ export default function AssistantChatBoxMenu(props: any) {
     const types = {
         'translate-eng-to-vie': 'Dịch Anh - Việt',
         'translate-vie-to-eng': 'Dịch Việt - Anh',
-        'synonym': 'Đồng nghĩa'
+        'explaining': 'Giải thích',
+        'synonym': 'Đồng nghĩa',
+        'antonym': 'Trái nghĩa',
+        'grammar-check': 'Kiểm tra ngữ pháp',
     }
 
     const [choice, setChoice] = useState("translate-eng-to-vie");

@@ -2,6 +2,7 @@ import {Avatar} from "@chakra-ui/react";
 import {useContext} from "react";
 import {ProfileContext} from "Frontend/App";
 import RequestType from "Frontend/components/Assistant/AssistantBody/AssistantChatDisplay/RequestType";
+import ReactMarkdown from "react-markdown";
 
 export default function RequestFromProfile(props: any) {
 
@@ -19,7 +20,9 @@ export default function RequestFromProfile(props: any) {
                         RequestType[props.request.type]
                     }
                 </div>
-                <div className={"request-content"}>{props.request.request}</div>
+                <div className={"request-content"}>
+                    <ReactMarkdown>{props.request.request}</ReactMarkdown>
+                </div>
             </div>
         </div>
     )

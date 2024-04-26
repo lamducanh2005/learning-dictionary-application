@@ -23,7 +23,7 @@ export default function AssistantChatBox(props: any) {
         toast({
             position: 'bottom',
             render: () => <AssistantChatBoxToast/>,
-            duration: 10000,
+            duration: null,
         })
         const newRequest: AssistantRequest = {
             request: request,
