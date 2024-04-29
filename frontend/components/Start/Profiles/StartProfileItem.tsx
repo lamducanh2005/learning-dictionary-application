@@ -11,17 +11,11 @@ export default function StartProfileItem(props: any) {
     return (
         <motion.div
             className={"start-profile-item"} onClick={handleClick}
-            initial={{rotate: -5, scale: 0.9, opacity: 0}}
-            animate={{rotate: 0, scale: 1, opacity: 1}}
-            whileHover={{
-                scale: 1.05,
-                backgroundColor: 'rgba(255, 255, 255, 1)',
-                color: 'black',
-            }}
-            whileTap={{
-                scale: 0.95,
-            }}
-            transition={{type: "spring", stiffness: 400, damping: 10}}
+            initial={{scale: 0.9, opacity: 0}}
+            animate={{scale: 1, opacity: 1}}
+            whileHover={{backgroundColor: 'rgba(245, 245, 245, 1)'}}
+            whileTap={{scale: 0.9,}}
+            transition={{type: "spring", stiffness: 200, damping: 20}}
         >
             <Avatar bg={"#999"} size={"sm"}/>
             <div className={"profile-name"}>{props.profile.name}</div>

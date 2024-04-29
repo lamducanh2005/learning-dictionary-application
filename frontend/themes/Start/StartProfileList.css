@@ -11,6 +11,14 @@
     font-family: "JetBrains Mono", monospace;
 }
 
+.start-profile-list > .list-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    max-height: 330px;
+}
+
 .start-profile-item {
     background-color: rgba(255, 255, 255, 0.75);
     padding: 20px;
@@ -21,11 +29,38 @@
     border: 1px solid #eee;
     color: #333;
     cursor: pointer;
+    width: 100%;
+    min-height: 75px;
 }
 
 .start-profile-item > .profile-name {
     font-weight: 600;
     display: flex;
     align-items: center;
+}
 
+
+.start-profile-list > .add-profile-button {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    width: 100%;
+    color: #aaa;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: all ease-in-out 100ms;
+}
+
+.start-profile-list > .add-profile-button:hover {
+    background-color: #eee;
+    transition: all ease-in-out 100ms;
+}
+
+.add-profile-popup .submit-button {
+    padding: 5px 15px;
+    border-radius: 10px;
+    background-color: #007bff;
+    color: white;
 }

@@ -25,9 +25,12 @@ public class ProfileService {
         return profileRepository.findAllProfiles();
     }
 
-    public void setThemeById(Long profileId, String theme) {
-        Profile profile = profileRepository.findProfileById(profileId);
-        profile.setTheme(theme);
+    public void addProfile(Profile profile) {
         profileRepository.save(profile);
     }
+
+    public void deleteProfileById(Long profileId) {
+        profileRepository.deleteById(profileId);
+    }
+
 }
