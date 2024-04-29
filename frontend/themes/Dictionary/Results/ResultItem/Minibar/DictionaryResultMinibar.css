@@ -8,6 +8,7 @@
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.5);
     border: 1px solid #eee;
+    min-height: 50px;
 }
 
 .dictionary-result-minibar > .flex-spacer {

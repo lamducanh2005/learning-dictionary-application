@@ -1,0 +1,30 @@
+.dictionary-result-statistic {
+    grid-column: span 8;
+    grid-row: span 5;
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10px;
+    padding: 10px 20px;
+    border: 1px solid #eee;
+    box-shadow: 0 0 10px #eee;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dictionary-result-statistic > .text {
+    height: 125px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.dictionary-result-statistic > .text > .percentage {
+    font-size: 32px;
+    font-weight: 600;
+    color: #333;
+}
+
+.dictionary-result-statistic > .chart {
+    height: 125px;
+    aspect-ratio: 1 / 1;
+}

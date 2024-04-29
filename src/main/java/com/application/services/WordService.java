@@ -156,6 +156,11 @@ public class WordService {
         return afterMasteryRate - beforeMasteryRate;
     }
 
+    public Long getMasteryRate(Long wordId, Long profileId) {
+        ProfileWord pw = profileWordRepository.findProfileWordByProfileIdAndWordId(profileId, wordId);
+        if (pw == null) return 0L;
+        return pw.getMasteryRate();
+    }
 
 }
 
