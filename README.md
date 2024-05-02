@@ -1,3 +1,5 @@
+<div style="background-color:red;color:white;padding:10px;"></div>
+
 # LAMBDA
 
 **LAMBDA** - Ứng dụng phát triển vốn từ vựng tiếng Anh. Thay cho cách tiếp cận truyền thống,
