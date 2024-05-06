@@ -41,6 +41,7 @@
     "react-dom": "^18.2.0",
     "react-markdown": "^9.0.1",
     "react-router-dom": "^6.4.2",
+    "react-use": "^17.5.0",
     "reactflow": "^11.10.4"
   },
   "devDependencies": {
@@ -103,7 +104,8 @@
     "@tremor/react": "$@tremor/react",
     "chart.js": "$chart.js",
     "react-chartjs-2": "$react-chartjs-2",
-    "axios": "$axios"
+    "axios": "$axios",
+    "react-use": "$react-use"
   },
   "vaadin": {
     "dependencies": {
@@ -147,6 +149,6 @@
       "workbox-core": "7.0.0",
       "workbox-precaching": "7.0.0"
     },
-    "hash": "39c6ff34ccbe41620b043af83eda0cef0a0da33b9ab71f31437d071dd8fc3b59"
+    "hash": "c857c492fb411d7bf4d72a08903d731525e2ab6ab5b8b1aa526e79b6c2024aeb"
   }
 }

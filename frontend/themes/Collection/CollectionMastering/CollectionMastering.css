@@ -29,3 +29,11 @@
     color: #ddd;
     background-color: #d52020;
 }
+
+.collection-mastering .restart-button {
+    padding: 5px 15px;
+    border-radius: 10px;
+    margin-left: 10px;
+    background-color: #ddd;
+    color: #17329f;
+}

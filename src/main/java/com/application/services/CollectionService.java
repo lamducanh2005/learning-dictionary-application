@@ -12,6 +12,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Comparator;
 import java.util.List;
 
 @BrowserCallable
@@ -83,7 +84,9 @@ public class CollectionService {
     }
 
     public List<Word> getAllWordsByCollectionId(Long collectionId) {
-        return collectionRepository.findAllWordsByCollectionId(collectionId);
+        List<Word> words = collectionRepository.findAllWordsByCollectionId(collectionId);
+        words.sort(Comparator.comparing(Word::getWord));
+        return words;
     }
 
     /**
@@ -205,6 +208,19 @@ public class CollectionService {
         }
         java.util.Collections.shuffle(questions);
         return questions;
+    }
+
+
+    public void saveCollection(Collection collection) {
+        collectionRepository.save(collection);
+    }
+
+    public void deleteCollection(Collection collection) {
+        collectionRepository.delete(collection);
+    }
+
+    public void deleteCollectionById(Long collectionId) {
+        collectionRepository.deleteById(collectionId);
     }
 
 }

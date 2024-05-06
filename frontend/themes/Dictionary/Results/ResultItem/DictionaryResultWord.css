@@ -25,7 +25,46 @@
     font-weight: 800;
 }
 
-.dictionary-result-word > .wrapper > .type-and-level {
+.dictionary-result-word > .wrapper > .type {
     font-size: 0.75em;
     font-weight: 400;
+}
+
+.dictionary-result-word > .wrapper > .level {
+    font-size: 0.75em;
+    font-weight: 600;
+    padding: 3px 20px;
+    border-radius: 100px;
+    background-color: #ddd;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.dictionary-result-word > .wrapper > .level.A1 {
+    background-color: #10bb0c;
+    color: #e1ffe0;
+}
+
+.dictionary-result-word > .wrapper > .level.A2 {
+    background-color: #0bc7c7;
+    color: #d9ffff;
+}
+
+.dictionary-result-word > .wrapper > .level.B1 {
+    background-color: #1f59d7;
+    color: #dae4fa;
+}
+
+.dictionary-result-word > .wrapper > .level.B2 {
+    background-color: #621fd7;
+    color: #dfd0fa;
+}
+
+.dictionary-result-word > .wrapper > .level.C1 {
+    background-color: #d7561f;
+    color: #fce6dc;
+}
+
+.dictionary-result-word > .wrapper > .level.C2 {
+    background-color: #d71f1f;
+    color: #fad0d0;
 }

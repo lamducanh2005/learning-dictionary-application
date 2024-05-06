@@ -22,7 +22,7 @@
     padding: 20px 15px;
     border-radius: 8px;
     border: 1px solid #f0f0f0;
-    text-indent: 2em;
     text-align: justify;
     color: #666;
+    white-space: pre-wrap;
 }

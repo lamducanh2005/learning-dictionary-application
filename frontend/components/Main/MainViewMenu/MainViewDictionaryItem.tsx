@@ -13,14 +13,14 @@ export default function MainViewDictionaryItem(props: any) {
                 whileHover={{
                     scale: 1.05,
                     backgroundColor: '#935dd5',
-                    color: '#e8ddf8',
+                    color: '#f8f3ff',
                     borderColor: '#935dd5',
                     boxShadow: '0 0 5px #aaa'
                 }}
                 whileTap={{
                     scale: 0.95,
                     backgroundColor: '#5d2d98',
-                    color: '#b798e5',
+                    color: '#d2b5fc',
                     borderColor: '#5d2d98'
                 }}
                 href={"/lambda/dictionary"}

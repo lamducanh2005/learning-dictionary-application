@@ -36,8 +36,7 @@ export default function CollectionCreateButton(props: any) {
             <PopoverTrigger>
                 <motion.button
                     className={"collection-create-button"}
-                    whileHover={{scale: 1.02}}
-                    whileTap={{scale: 0.95}}
+                    whileTap={{scale: 0.8}}
                 >
                     <AddIcon color={"white"}/>
                 </motion.button>

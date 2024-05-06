@@ -58,9 +58,13 @@
     transition: all ease-in-out 100ms;
 }
 
+.add-profile-popup {
+    font-family: "JetBrains Mono", monospace;
+}
+
 .add-profile-popup .submit-button {
     padding: 5px 15px;
     border-radius: 10px;
-    background-color: #007bff;
+    background-color: #3454ce;
     color: white;
 }

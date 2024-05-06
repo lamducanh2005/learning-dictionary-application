@@ -54,6 +54,11 @@
 
 .main-view-menu-item.reading {
     grid-column: span 6;
+    padding: 50px 25px 200px;
+    background-image: url("../../../util/images/library-image.png");
+    background-size: 500px;
+    background-repeat: no-repeat;
+    background-position: 50% 150px;
 }
 
 .main-view-menu-item.assistant {
@@ -95,6 +100,6 @@
 }
 
 
-.main-view-menu-item.dictionary > .button {
-
+.main-view-menu-item.reading > .button {
+    padding: 5px 20px;
 }

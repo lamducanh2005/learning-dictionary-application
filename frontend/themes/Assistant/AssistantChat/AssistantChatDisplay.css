@@ -52,6 +52,9 @@
     margin-top: 20px;
     font-size: 14px;
     text-align: justify;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     /*white-space: pre-line;*/
 }
 
@@ -59,7 +62,7 @@
 .request-from-profile .request-content ol,
 .response-from-assistant .response-content ul,
 .response-from-assistant .response-content ol {
-    padding-left: 50px;
+    padding-left: 6em;
 }
 
 .request-from-profile .request-content p,

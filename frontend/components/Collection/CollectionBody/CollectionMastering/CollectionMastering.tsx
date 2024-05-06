@@ -10,7 +10,7 @@ import {
 import {useContext, useEffect, useState} from "react";
 import 'Frontend/themes/Collection/CollectionMastering/CollectionMastering.css';
 import Question from "Frontend/generated/com/application/models/Question";
-import {CollectionContext} from "Frontend/components/Collection/CollectionBody";
+import {CollectionContext, PanelContext} from "Frontend/components/Collection/CollectionBody";
 import {CollectionService} from "Frontend/generated/endpoints";
 import {motion} from "framer-motion";
 import CollectionMasteringStart
@@ -21,7 +21,7 @@ import CollectionMasteringQuestion
     from "Frontend/components/Collection/CollectionBody/CollectionMastering/CollectionMasteringQuestion";
 
 export default function CollectionMastering(props: any) {
-
+    const panel = useContext(PanelContext)
     const collection = useContext(CollectionContext);
     const [questions, setQuestions] = useState<Question[]>([])
     const [index, setIndex] = useState(-1);
@@ -53,6 +53,7 @@ export default function CollectionMastering(props: any) {
     useEffect(() => {
         if (index >= questions.length) props.setButtonText("Xem lại thành quả");
         else if (index >= 0) props.setButtonText("Tiếp tục cày cuốc");
+        else props.setButtonText("Bắt đầu cày cuốc");
     }, [index]);
 
     useEffect(() => {
@@ -71,7 +72,7 @@ export default function CollectionMastering(props: any) {
             <ModalOverlay className={"collection-mastering-overlay"}/>
             <ModalContent className={"collection-mastering"}>
                 <ModalHeader>Chinh phục</ModalHeader>
-                <ModalCloseButton/>
+                <ModalCloseButton onClick={() => setTimeout(panel.reopenPanel, 100)}/>
                 <ModalBody>
                     {
                         (index === -1) ?
@@ -115,7 +116,13 @@ export default function CollectionMastering(props: any) {
                                     onClick={() => setIndex(questions.length)}
                                 >Kết thúc
                                 </motion.button>
-                            </> : <></>
+                            </> : (index >= questions.length) ?
+                                <motion.button
+                                    whileHover={{scale: 1.05}}
+                                    whileTap={{scale: 0.9}}
+                                    className={"restart-button"}
+                                    onClick={() => setIndex(-1)}
+                                >Làm lại lần nữa</motion.button> : <></>
                     }
 
                 </ModalFooter>

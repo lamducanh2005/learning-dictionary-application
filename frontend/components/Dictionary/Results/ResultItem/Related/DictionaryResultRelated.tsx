@@ -19,6 +19,7 @@ export default function DictionaryResultRelated(props : any) {
     }, []);
 
     return(
+        (relatedList.length > 0) &&
         <div className={"dictionary-result-related"}>
             <div className={"title"}>Các từ liên quan</div>
             <div className={"wrapper"}>
