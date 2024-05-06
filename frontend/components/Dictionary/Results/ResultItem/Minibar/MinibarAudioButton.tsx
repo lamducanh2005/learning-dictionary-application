@@ -7,11 +7,11 @@ export default function MinibarAudioButton(props : any) {
     const word = useContext(WordContext)
 
     const getAudioUrl = () => {
-        if (word.audioUrl !== '-' && props.text === 'US') return word.audioUrl;
+        if (word.audioUrl !== '-') return word.audioUrl;
 
         const specialWord1 = (props.text === 'US') ? 'us_pron' : 'uk_pron';
         const specialWord2 = (props.text === 'US') ? '__us_1.mp3' : '__gb_1.mp3';
-        var specialWord = word.word + specialWord2;
+        var specialWord = word.word?.replace(/[-\s]/g, '_') + specialWord2;
         const specialCharacter = (specialWord.substring(0, 3) === 'con') ? 'x' : '';
         specialWord = specialCharacter + specialWord;
         return 'https://www.oxfordlearnersdictionaries.com/media/english/'
@@ -19,7 +19,7 @@ export default function MinibarAudioButton(props : any) {
             + specialWord.substring(0, 1) + '/'
             + specialWord.substring(0, 3) + '/'
             + specialWord.substring(0, 5) + '/'
-            + specialCharacter + word.word + specialWord2;
+            + specialCharacter + word.word?.replace(/[-\s]/g, '_') + specialWord2;
     }
 
     return(

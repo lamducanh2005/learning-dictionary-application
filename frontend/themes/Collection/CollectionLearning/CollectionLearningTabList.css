@@ -1,0 +1,35 @@
+.collection-learning-tab-list {
+    display: flex;
+    flex-direction: column;
+    width: 20%;
+    min-width: 240px;
+    min-height: 480px;
+    max-height: 561px;
+    background-color: rgba(0, 0, 0, 0.03);
+    padding: 10px;
+    border-radius: 10px;
+    gap: 5px;
+    position: sticky;
+    top: 0;
+    overflow-y: auto;
+}
+
+.collection-learning-tab-item {
+    padding: 5px 15px;
+    transition: all ease-in-out 100ms;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.collection-learning-tab-item:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.collection-learning-tab-item:active {
+    background-color: rgba(255, 255, 255, 0.75);
+    transform: scale(0.9);
+}
+
+.collection-learning-tab-item.active {
+    background-color: rgba(255, 255, 255, 1);
+}

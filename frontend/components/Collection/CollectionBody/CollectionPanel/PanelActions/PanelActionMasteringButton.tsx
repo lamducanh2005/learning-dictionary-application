@@ -18,6 +18,5 @@ export default function PanelActionMasteringButton(props: any) {
             whileTap={{scale: 0.9}}
         >{buttonText}</motion.button>
         <CollectionMastering isOpen={isOpen} onClose={onClose} setButtonText={setButtonText}/>
-
     </>)
 }

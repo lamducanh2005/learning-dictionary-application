@@ -22,7 +22,7 @@ export default function DictionaryView(props : any) {
     return(
         <SearchResultsContext.Provider value={searchResults}>
         <div className={"dictionary-view"}>
-            <DictionaryHeader onSearch={handleSearch} />
+            <DictionaryHeader onSearch={handleSearch}/>
             <DictionaryBody />
         </div>
         </SearchResultsContext.Provider>

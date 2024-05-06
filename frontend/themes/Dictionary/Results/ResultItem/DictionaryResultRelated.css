@@ -49,7 +49,6 @@
 }
 
 .related-item-popover {
-    z-index: 1000 !important;
     font-family: "JetBrains Mono", monospace;
 }
 

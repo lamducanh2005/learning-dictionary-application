@@ -162,6 +162,25 @@ public class WordService {
         return pw.getMasteryRate();
     }
 
+    public void setNoteForWord(Long wordId, Long profileId, String note) {
+        ProfileWord pw = profileWordRepository.findProfileWordByProfileIdAndWordId(profileId, wordId);
+        if (pw == null) {
+            pw = new ProfileWord();
+            pw.setProfileId(profileId);
+            pw.setWordId(wordId);
+            pw.setMasteryRate(0L);
+        }
+        pw.setNote(note);
+        profileWordRepository.save(pw);
+
+    }
+
+    public String getNoteForWord(Long wordId, Long profileId) {
+        ProfileWord pw = profileWordRepository.findProfileWordByProfileIdAndWordId(profileId, wordId);
+        if (pw == null) return "";
+        return pw.getNote();
+    }
+
 }
 
 

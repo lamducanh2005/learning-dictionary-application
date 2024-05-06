@@ -41,6 +41,7 @@ export default function LambdaSearchBox(props : any) {
                             );
                         })
                     }
+
                 </AutoCompleteList>
             </AutoComplete>
 

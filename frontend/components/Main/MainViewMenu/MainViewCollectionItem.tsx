@@ -13,14 +13,14 @@ export default function MainViewCollectionItem(props: any) {
                 whileHover={{
                     scale: 1.05,
                     backgroundColor: '#cb4d97',
-                    color: '#f5cce4',
+                    color: '#fff4fb',
                     borderColor: '#cb4d97',
                     boxShadow: '0 0 5px #aaa'
                 }}
                 whileTap={{
                     scale: 0.95,
                     backgroundColor: '#8e2d6d',
-                    color: '#cb73a6',
+                    color: '#e596c4',
                     borderColor: '#8e2d6d'
                 }}
                 href={"lambda/collection"}

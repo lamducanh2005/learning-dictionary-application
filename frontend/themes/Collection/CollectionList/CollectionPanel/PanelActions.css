@@ -18,7 +18,37 @@
 }
 
 .panel-actions > .panel-action-button.learning,
-.panel-actions > .panel-action-button.mastering {
-
+.panel-actions > .panel-action-button.mastering,
+.panel-actions > .panel-action-button.edit {
     color: #3454ce;
+}
+
+.collection-edit-popover {
+    font-family: "JetBrains Mono", monospace;
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 10px !important;
+}
+
+.collection-edit-popover .delete-collection-button {
+    color: #ce3434;
+    padding: 5px 15px;
+    border-radius: 7px;
+    background-color: #eee;
+}
+
+.collection-edit-popover .cancel-change-button {
+    color: #333;
+    background-color: #eee;
+    padding: 5px 15px;
+    border-radius: 7px;
+
+}
+
+.collection-edit-popover .save-change-button {
+    color: #3454ce;
+    padding: 5px 15px;
+    border-radius: 7px;
+    margin-left: 10px;
+    background-color: #eee;
 }

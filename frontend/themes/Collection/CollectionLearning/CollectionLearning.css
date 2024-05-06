@@ -1,0 +1,20 @@
+.collection-learning-overlay {
+    background-color: rgba(100, 100, 100, 0.25) !important;
+}
+
+.collection-learning {
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05) !important;
+    min-width: 1080px;
+    border-radius: 10px !important;
+    font-family: "JetBrains Mono", monospace;
+}
+
+.collection-learning-tab {
+    display: flex;
+    flex-direction: row;
+    padding: 10px 20px 20px 20px !important;
+    gap: 20px;
+
+}

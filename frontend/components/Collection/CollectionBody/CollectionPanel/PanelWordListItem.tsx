@@ -16,8 +16,12 @@ export default function PanelWordListItem(props: any) {
     const cancelRef = useRef<any>()
 
     const handleDelete = () => {
-        props.onDelete(props.word.id);
         onClose();
+        setTimeout(() => {
+            props.onDelete(props.word.id);
+        }, 100);
+
+
     }
 
     return (

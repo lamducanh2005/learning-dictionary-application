@@ -23,7 +23,8 @@ export default function CollectionPrivateList(props: any) {
             }
         }
         updateCollections();
-    }, [isAdding, profile]);
+        console.log("refreshed")
+    }, [isAdding, profile, props.isRefresh]);
 
     const handleAdd = async (newCollection: Collection) => {
         await CollectionService.addCollection(newCollection);

@@ -5,8 +5,10 @@ import com.application.repositories.WordComparisonRepository;
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.BrowserCallable;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @BrowserCallable
@@ -18,15 +20,23 @@ public class WordComparisonService {
     private WordComparisonRepository wordComparisonRepository;
 
     public List<WordComparison> getSynonymsByWordId(Long wordId) {
-        return wordComparisonRepository.findWordComparisonsMoreThan(75L);
+        return wordComparisonRepository.findWordComparisonsMoreThan(wordId, 75L, Sort.by(Sort.Direction.DESC, "score"));
     }
 
     public List<WordComparison> getAntonymsByWordId(Long wordId) {
-        return wordComparisonRepository.findWordComparisonsLessThan(-75L);
+        return wordComparisonRepository.findWordComparisonsLessThan(wordId, -75L, Sort.by(Sort.Direction.DESC, "score"));
+    }
+
+    private List<WordComparison> getRelatedByWordId(Long wordId) {
+        return wordComparisonRepository.findWordComparisonsBetween(wordId, -74L, 74L);
     }
 
     public List<WordComparison> getComparisonsByWordId(Long wordId) {
-        return wordComparisonRepository.findWordComparisonByWordId(wordId);
+        List<WordComparison> result = new ArrayList<>();
+        result.addAll(getSynonymsByWordId(wordId));
+        result.addAll(getAntonymsByWordId(wordId));
+        result.addAll(getRelatedByWordId(wordId));
+        return result;
     }
 
     public void addComparison(WordComparison wordComparison) {

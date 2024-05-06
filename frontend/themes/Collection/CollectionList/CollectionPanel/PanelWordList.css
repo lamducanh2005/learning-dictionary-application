@@ -9,6 +9,9 @@
     grid-gap: 10px;
     /*align-items: start;*/
     align-content: start;
+    max-height: 350px;
+    overflow-y: auto;
+
 }
 
 .panel-word-list > .panel-word-list-item {
@@ -19,6 +22,7 @@
     border-radius: 5px;
     padding: 5px 10px;
     display: flex;
+    min-height: 36px;
 }
 
 .panel-word-list > .panel-word-list-item > .word {

@@ -39,42 +39,40 @@ export default function DictionaryResultRelatedItem(props : any) {
                     {comparedWord}
                 </button>
             </PopoverTrigger>
-            <Portal>
-                <PopoverContent className={"related-item-popover"}>
-                    <PopoverArrow/>
-                    <PopoverCloseButton/>
-                    <PopoverBody>
-                        <div className={"related-item-score"}>
-                            <div
-                                className={"status"}
-                                style={{backgroundColor: statusColor, outlineColor: statusColor}}
-                            />
-                            <div style={{color: statusColor}}>{scoreMeaning}</div>
+            <PopoverContent className={"related-item-popover"} style={{zIndex: 100000}}>
+                <PopoverArrow/>
+                <PopoverCloseButton/>
+                <PopoverBody>
+                    <div className={"related-item-score"}>
+                        <div
+                            className={"status"}
+                            style={{backgroundColor: statusColor, outlineColor: statusColor}}
+                        />
+                        <div style={{color: statusColor}}>{scoreMeaning}</div>
 
-                        </div>
-                        <div className={"related-item-word"}>
-                            {comparedWord}
-                            {/*<span style={{color: '#ccc', }}>{" ~ " + word.word}</span>*/}
-                        </div>
-                        <div className={"related-item-explaining"}>
-                            {explaining.split(/\[(.*?)\]/).map((part: any, index: number) => {
-                                if (index % 2 === 0) {
-                                    return <span key={index}>{part}</span>;
-                                } else {
-                                    return (
-                                        <span key={index} style={{
-                                            padding: '2px 5px',
-                                            backgroundColor: '#faedbe',
-                                            color: 'black',
-                                            fontWeight: 'bold',
-                                        }}
-                                        >{part}</span>
-                                    )
-                                }
-                            })}</div>
-                    </PopoverBody>
-                </PopoverContent>
-            </Portal>
+                    </div>
+                    <div className={"related-item-word"}>
+                        {comparedWord}
+                        {/*<span style={{color: '#ccc', }}>{" ~ " + word.word}</span>*/}
+                    </div>
+                    <div className={"related-item-explaining"}>
+                        {explaining.split(/\[(.*?)\]/).map((part: any, index: number) => {
+                            if (index % 2 === 0) {
+                                return <span key={index}>{part}</span>;
+                            } else {
+                                return (
+                                    <span key={index} style={{
+                                        padding: '2px 5px',
+                                        backgroundColor: '#faedbe',
+                                        color: 'black',
+                                        fontWeight: 'bold',
+                                    }}
+                                    >{part}</span>
+                                )
+                            }
+                        })}</div>
+                </PopoverBody>
+            </PopoverContent>
         </Popover>
 
     )

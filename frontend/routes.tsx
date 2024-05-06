@@ -1,8 +1,6 @@
 import {createBrowserRouter} from 'react-router-dom';
 import DictionaryView from "Frontend/views/Dictionary/DictionaryView";
-import MixedView from "Frontend/views/MixedLearning/MixedView";
-import MixedLearningBody from "Frontend/components/MixedLearning/MixedBody/MixedLearningBody";
-import MixedStartBody from "Frontend/components/MixedLearning/MixedBody/MixedStartBody";
+import ReadingView from "Frontend/views/Reading/ReadingView";
 import Test from "Frontend/components/Test/Test";
 import DevDictionaryView from "Frontend/views/Developer/Dictionary/DevDictionaryView";
 import DevDictionaryResults from "Frontend/views/Developer/Dictionary/DevDictionaryResults";
@@ -37,6 +35,11 @@ const router = createBrowserRouter([
         path: '/lambda/assistant',
         element: <AssistantView/>,
         handle: {title: 'Lambda Assistant'}
+    },
+    {
+        path: '/lambda/reading',
+        element: <ReadingView/>,
+        handle: {title: 'Lambda Reading'}
     },
     {
         path: '/developer/dictionary',

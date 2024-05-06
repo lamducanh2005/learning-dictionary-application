@@ -4,7 +4,7 @@ export default function DictionaryBody(props : any) {
     return(
         <div
             className={"dictionary-view-body"}
-            style={{marginTop: 150}}
+            style={{paddingTop: 150, paddingBottom: 150}}
         >
             <DictionaryResults />
         </div>
