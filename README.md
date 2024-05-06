@@ -1,4 +1,4 @@
-<div style="background-color:red;color:white;padding:10px;"></div>
+<div style="background-color:red;color:white;padding:10px;">-</div>
 
 # LAMBDA
 
