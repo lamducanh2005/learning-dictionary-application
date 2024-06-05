@@ -24,7 +24,7 @@ public class WordComparisonService {
     }
 
     public List<WordComparison> getAntonymsByWordId(Long wordId) {
-        return wordComparisonRepository.findWordComparisonsLessThan(wordId, -75L, Sort.by(Sort.Direction.DESC, "score"));
+        return wordComparisonRepository.findWordComparisonsLessThan(wordId, -75L, Sort.by(Sort.Direction.ASC, "score"));
     }
 
     private List<WordComparison> getRelatedByWordId(Long wordId) {

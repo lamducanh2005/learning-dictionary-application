@@ -3,15 +3,18 @@ import {AddIcon, MinusIcon, TriangleDownIcon, TriangleUpIcon} from "@chakra-ui/i
 import {useContext, useEffect, useState} from "react";
 import {CollectionService} from "Frontend/generated/endpoints";
 import {CollectionContext} from "Frontend/components/Collection/CollectionBody";
+import {ProfileContext} from "Frontend/App";
+import {MasteringContext} from "Frontend/components/Collection/CollectionBody/CollectionMastering/CollectionMastering";
 
 export default function CollectionMasteringEnd(props: any) {
-
+    const profile = useContext(ProfileContext);
     const collection = useContext(CollectionContext);
+    const masteringContext = useContext(MasteringContext);
     const [afterCollectionMastery, setAfterCollectionMastery] = useState<number>()
 
     useEffect(() => {
         const getCurrentCollectionMastery = async () => { // @ts-ignore
-            const response = await CollectionService.getExactMasteryOfCollection(collection.id);
+            const response = await CollectionService.getExactMasteryOfCollection(collection.id, profile.id);
             setAfterCollectionMastery(response);
         }
         getCurrentCollectionMastery();
@@ -19,7 +22,7 @@ export default function CollectionMasteringEnd(props: any) {
 
     useEffect(() => {
         console.log('after: ', afterCollectionMastery);
-        console.log('before: ', props.resultAnalysis.beforeCollectionMastery);
+        console.log('before: ', masteringContext.resultAnalysis.beforeCollectionMastery);
     }, [afterCollectionMastery]);
 
 
@@ -32,36 +35,37 @@ export default function CollectionMasteringEnd(props: any) {
             <div className={"question-answered"}>
                 <div className={"text"}>Số câu đã trả lời</div>
                 <div className={"number"}>
-                    {props.resultAnalysis.questionAnswered} / {props.numberOfQuestion}
+                    {masteringContext.resultAnalysis.questionAnswered} / {masteringContext.numberOfQuestion}
                 </div>
             </div>
             <div className={"increase-mastery"}>
                 <div className={"text"}>Số điểm thành thạo lấy được</div>
                 <div className={"number"}>
                     <TriangleUpIcon/>
-                    {props.resultAnalysis.increaseMastery}
+                    {masteringContext.resultAnalysis.increaseMastery}
                 </div>
             </div>
             <div className={"decrease-mastery"}>
                 <div className={"text"}>Số điểm thành thạo mất đi</div>
                 <div className={"number"}>
                     <TriangleDownIcon/>
-                    {props.resultAnalysis.decreaseMastery}
+                    {masteringContext.resultAnalysis.decreaseMastery}
                 </div>
             </div>
             <div className={"collection-mastery-change"}>
                 <div className={"text"}>Thành thạo của bộ sưu tập</div>
                 <div
                     className={ // @ts-ignore
-                        (afterCollectionMastery > props.resultAnalysis.beforeCollectionMastery) ? "number increase" : "number decrease"
+                        (afterCollectionMastery > masteringContext.resultAnalysis.beforeCollectionMastery) ?
+                            "number increase" : "number decrease"
                     }
                 >
                     {   // @ts-ignore
-                        (afterCollectionMastery > props.resultAnalysis.beforeCollectionMastery) ?
+                        (afterCollectionMastery > masteringContext.resultAnalysis.beforeCollectionMastery) ?
                             <TriangleUpIcon/> : <TriangleDownIcon/>
                     }
                     {   // @ts-ignore
-                        Math.abs(afterCollectionMastery - props.resultAnalysis.beforeCollectionMastery).toFixed(2) + " %"
+                        Math.abs(afterCollectionMastery - masteringContext.resultAnalysis.beforeCollectionMastery).toFixed(2) + " %"
                     }
                 </div>
             </div>

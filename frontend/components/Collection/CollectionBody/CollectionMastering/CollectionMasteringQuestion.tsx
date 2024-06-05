@@ -6,20 +6,22 @@ import Answer from "Frontend/generated/com/application/models/Answer";
 import {ProfileContext} from "Frontend/App";
 import {WordService} from "Frontend/generated/endpoints";
 import {MinusIcon, TriangleDownIcon, TriangleUpIcon} from "@chakra-ui/icons";
+import {MasteringContext} from "Frontend/components/Collection/CollectionBody/CollectionMastering/CollectionMastering";
 
 
 export default function CollectionMasteringQuestion(props: any) {
 
     const profile = useContext(ProfileContext);
+    const masteringContext = useContext(MasteringContext);
+    const question = props.question;
     const [time, setTime] = useState(
-        (props.question.masteryMax <= 25) ? 30 :
-            (props.question.masteryMax <= 50) ? 60 :
-                (props.question.masteryMax <= 75) ? 90 : 120
+        (question.masteryMax <= 25) ? 30 :
+            (question.masteryMax <= 50) ? 60 :
+                (question.masteryMax <= 75) ? 90 : 120
     );
     const [result, setResult] = useState(7905);
 
     useEffect(() => {
-        // Clock
         const interval = setInterval(() => {
             setTime(prevTime => (prevTime <= 1) ? 0 : prevTime - 1);
         }, 1000);
@@ -29,7 +31,7 @@ export default function CollectionMasteringQuestion(props: any) {
     useEffect(() => {
         if (time === 0) {
             setResult(0);
-            setTimeout(props.nextQuestion, 1000);
+            setTimeout(masteringContext.nextQuestion, 1000);
         }
     }, [time]);
 
@@ -37,28 +39,19 @@ export default function CollectionMasteringQuestion(props: any) {
     const handleSelect = async (answer: Answer) => {
 
         const response = await WordService.increaseMasteryRateWithMasteryMax(
-            props.question.wordId, // @ts-ignore
+            question.wordId, // @ts-ignore
             profile.id,
             answer.masteryIncrease,
-            props.question.masteryMax
+            question.masteryMax
         );
         setResult(response);
 
-        let newResultAnalysis = props.resultAnalysis;
+        let newResultAnalysis = masteringContext.resultAnalysis;
         newResultAnalysis.questionAnswered += 1;
-        if (response > 0) {
-            newResultAnalysis.increaseMastery += response;
-            newResultAnalysis.increaseMasteryLine.push(newResultAnalysis.increaseMastery);
-            newResultAnalysis.decreaseMasteryLine.push(newResultAnalysis.decreaseMastery);
-
-        } else if (response < 0) {
-            newResultAnalysis.decreaseMastery -= response;
-            newResultAnalysis.decreaseMasteryLine.push(newResultAnalysis.decreaseMastery);
-            newResultAnalysis.increaseMasteryLine.push(newResultAnalysis.increaseMastery);
-        }
-        props.setResultAnalysis(newResultAnalysis);
-
-        setTimeout(props.nextQuestion, 1000);
+        if (response < 0) newResultAnalysis.decreaseMastery -= response;
+        else newResultAnalysis.increaseMastery += response;
+        masteringContext.setResultAnalysis(newResultAnalysis);
+        setTimeout(masteringContext.nextQuestion, 1000);
     }
 
     return (
@@ -70,18 +63,16 @@ export default function CollectionMasteringQuestion(props: any) {
         >
 
             <div className={"question-information-bar"}>
-                <div className={"question-index"}>Câu hỏi {props.index}</div>
+                <div className={"question-index"}>Câu hỏi {masteringContext.index}</div>
                 <div style={{flex: 1}}/>
-                {(result === 7905) ? <></> :
-                    <QuestionResult result={result}/>
-                }
+                {(result === 7905) ? <></> : <QuestionResult result={result}/>}
                 <div className={"question-timer"}>{time} giây</div>
             </div>
 
-            <div className={"question-content"}>{props.question.question}</div>
+            <div className={"question-content"}>{question.question}</div>
 
             <div className={"question-answers"}>
-                {props.question.answers.map((answer: Answer, index: number) => {
+                {question.answers.map((answer: Answer, index: number) => {
                     return (
                         <motion.div
                             className={"question-answer"}

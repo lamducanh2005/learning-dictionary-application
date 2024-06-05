@@ -30,7 +30,10 @@ public class ProfileService {
     }
 
     public void deleteProfileById(Long profileId) {
-        profileRepository.deleteById(profileId);
+
+        Profile f = profileRepository.findProfileById(profileId);
+        f.setVisible(false);
+        profileRepository.save(f);
     }
 
 }

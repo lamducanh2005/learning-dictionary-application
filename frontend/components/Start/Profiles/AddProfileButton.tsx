@@ -9,7 +9,6 @@ import {
     ModalOverlay,
     useDisclosure
 } from "@chakra-ui/react";
-import {motion} from "framer-motion";
 import {useEffect, useState} from "react";
 
 export default function AddProfileButton(props: any) {
@@ -17,7 +16,7 @@ export default function AddProfileButton(props: any) {
     const [profileName, setProfileName] = useState<String>("Người dùng không tên");
 
     const handleClick = () => {
-        props.onClick({name: profileName});
+        props.onClick({name: profileName, visible: 1});
         onClose();
     }
 
@@ -25,7 +24,7 @@ export default function AddProfileButton(props: any) {
         <>
             <div className={"add-profile-button"} onClick={onOpen}><AddIcon/></div>
             <Modal isOpen={isOpen} onClose={onClose} isCentered>
-                <ModalOverlay/>
+                <ModalOverlay className={"add-profile-overlay"}/>
                 <ModalContent className={"add-profile-popup"}>
                     <ModalHeader>Tạo hồ sơ mới</ModalHeader>
                     <ModalCloseButton/>
@@ -33,6 +32,8 @@ export default function AddProfileButton(props: any) {
                         <Input
                             placeholder="Nhập tên hồ sơ"
                             onChange={(e) => setProfileName(e.target.value)}
+                            spellCheck={false}
+                            style={{backgroundColor: "#fff"}}
                         />
                     </ModalBody>
 

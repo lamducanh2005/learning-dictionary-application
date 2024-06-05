@@ -11,6 +11,7 @@ export default function AssistantChatBoxMenu(props: any) {
         'synonym': 'Đồng nghĩa',
         'antonym': 'Trái nghĩa',
         'grammar-check': 'Kiểm tra ngữ pháp',
+        'paraphrase': 'Tái diễn giải',
     }
 
     const [choice, setChoice] = useState("translate-eng-to-vie");

@@ -7,7 +7,7 @@ import {
     ModalHeader,
     ModalOverlay
 } from "@chakra-ui/react";
-import {useContext, useEffect, useState} from "react";
+import {createContext, useContext, useEffect, useState} from "react";
 import 'Frontend/themes/Collection/CollectionMastering/CollectionMastering.css';
 import Question from "Frontend/generated/com/application/models/Question";
 import {CollectionContext, PanelContext} from "Frontend/components/Collection/CollectionBody";
@@ -19,10 +19,14 @@ import CollectionMasteringEnd
     from "Frontend/components/Collection/CollectionBody/CollectionMastering/CollectionMasteringEnd";
 import CollectionMasteringQuestion
     from "Frontend/components/Collection/CollectionBody/CollectionMastering/CollectionMasteringQuestion";
+import {ProfileContext} from "Frontend/App";
+
+export const MasteringContext = createContext({} as any);
 
 export default function CollectionMastering(props: any) {
     const panel = useContext(PanelContext)
     const collection = useContext(CollectionContext);
+    const profile = useContext(ProfileContext);
     const [questions, setQuestions] = useState<Question[]>([])
     const [index, setIndex] = useState(-1);
 
@@ -33,8 +37,6 @@ export default function CollectionMastering(props: any) {
         beforeCollectionMastery: 0,
         afterCollectionMastery: 0,
         questionAnswered: 0,
-        increaseMasteryLine: [0,],
-        decreaseMasteryLine: [0,],
     })
 
     useEffect(() => {
@@ -42,8 +44,8 @@ export default function CollectionMastering(props: any) {
             if (collection.id) {
                 const response = await CollectionService.getQuestionsForCollection(collection.id);
                 setQuestions(response);
-                let newResultAnalysis = resultAnalysis;
-                newResultAnalysis.beforeCollectionMastery = await CollectionService.getExactMasteryOfCollection(collection.id);
+                let newResultAnalysis = resultAnalysis; // @ts-ignore
+                newResultAnalysis.beforeCollectionMastery = await CollectionService.getExactMasteryOfCollection(collection.id, profile.id);
                 setResultAnalysis(newResultAnalysis);
             }
         }
@@ -58,44 +60,35 @@ export default function CollectionMastering(props: any) {
 
     useEffect(() => {
         const updateResult = async () => {
-            let newResultAnalysis = resultAnalysis;
-            if (collection.id) newResultAnalysis.beforeCollectionMastery = await CollectionService.getMasteryOfCollection(collection.id);
+            let newResultAnalysis = resultAnalysis; // @ts-ignore
+            if (collection.id) newResultAnalysis.beforeCollectionMastery = await CollectionService.getExactMasteryOfCollection(collection.id, profile.id);
             setResultAnalysis(newResultAnalysis);
         }
         updateResult();
     }, [collection]);
 
 
-    const nextQuestion = () => setIndex(index + 1);
     return (
+        <MasteringContext.Provider value={{
+            resultAnalysis: resultAnalysis,
+            setResultAnalysis: setResultAnalysis,
+            index: index + 1,
+            setIndex: setIndex,
+            nextQuestion: () => setIndex(index + 1),
+            numberOfQuestion: questions.length,
+            onClose: props.onClose,
+        }}>
         <Modal isOpen={props.isOpen} onClose={props.onClose} isCentered>
             <ModalOverlay className={"collection-mastering-overlay"}/>
             <ModalContent className={"collection-mastering"}>
-                <ModalHeader>Chinh phục</ModalHeader>
+                <ModalHeader>Cày cuốc</ModalHeader>
                 <ModalCloseButton onClick={() => setTimeout(panel.reopenPanel, 100)}/>
                 <ModalBody>
                     {
                         (index === -1) ?
-                            <CollectionMasteringStart
-                                numberOfQuestion={questions.length}
-                                nextQuestion={nextQuestion}
-                                onClose={props.onClose}
-                            /> : (index >= questions.length) ?
-
-                                <CollectionMasteringEnd
-                                    numberOfQuestion={questions.length}
-                                    resultAnalysis={resultAnalysis}
-                                /> :
-
-                                <CollectionMasteringQuestion
-                                    key={questions[index].id}
-                                    index={index + 1}
-                                    question={questions[index]}
-                                    nextQuestion={nextQuestion}
-                                    numberOfQuestion={questions.length}
-                                    resultAnalysis={resultAnalysis}
-                                    setResultAnalysis={setResultAnalysis}
-                                />
+                            <CollectionMasteringStart/> : (index >= questions.length) ?
+                                <CollectionMasteringEnd/> :
+                                <CollectionMasteringQuestion key={questions[index].id} question={questions[index]}/>
                     }
                 </ModalBody>
                 <ModalFooter>
@@ -106,7 +99,7 @@ export default function CollectionMastering(props: any) {
                                     className={"skip-button"}
                                     whileHover={{scale: 1.05}}
                                     whileTap={{scale: 0.9}}
-                                    onClick={nextQuestion}
+                                    onClick={() => setIndex(index + 1)}
                                 >Bỏ qua câu này
                                 </motion.button>
                                 <motion.button
@@ -121,12 +114,22 @@ export default function CollectionMastering(props: any) {
                                     whileHover={{scale: 1.05}}
                                     whileTap={{scale: 0.9}}
                                     className={"restart-button"}
-                                    onClick={() => setIndex(-1)}
+                                    onClick={async () => {
+                                        setIndex(-1);
+                                        setResultAnalysis({
+                                            increaseMastery: 0,
+                                            decreaseMastery: 0, // @ts-ignore
+                                            beforeCollectionMastery: await CollectionService.getExactMasteryOfCollection(collection.id, profile.id),
+                                            afterCollectionMastery: 0,
+                                            questionAnswered: 0,
+                                        });
+                                    }}
                                 >Làm lại lần nữa</motion.button> : <></>
                     }
 
                 </ModalFooter>
             </ModalContent>
         </Modal>
+        </MasteringContext.Provider>
     )
 }

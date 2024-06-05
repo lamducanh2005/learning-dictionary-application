@@ -60,6 +60,13 @@
 
 .add-profile-popup {
     font-family: "JetBrains Mono", monospace;
+    background-color: rgba(255, 255, 255, 0.6) !important;
+    backdrop-filter: blur(20px);
+    border-radius: 10px !important;
+}
+
+.add-profile-overlay {
+    background-color: rgba(0, 0, 0, 0.2) !important;
 }
 
 .add-profile-popup .submit-button {

@@ -21,6 +21,7 @@ export default function CollectionBody() {
     const [isAnyOpen, setIsAnyOpen] = useState<boolean>(false);
     const startOfPanel = useRef<null | HTMLDivElement>(null);
     const collectionPrivateList = useRef<null | HTMLDivElement>(null);
+    const collectionPublicList = useRef<null | HTMLDivElement>(null);
     const [isRefresh, setRefresh] = useState<boolean>(false);
     const handleOpen = async (collectionId: number) => {
         setCollection(await CollectionService.getCollectionById(collectionId));
@@ -39,20 +40,23 @@ export default function CollectionBody() {
 
     return (
         <div className={"collection-body"}>
-            <div style={{padding: 50,}} ref={collectionPrivateList}/>
+            <div style={{padding: 50,}} ref={collectionPublicList}/>
+            <CollectionPublicList onOpen={handleOpen} isRefresh={isRefresh}/>
+            <div style={{padding: 25,}} ref={collectionPrivateList}/>
             <CollectionPrivateList onOpen={handleOpen} isRefresh={isRefresh}/>
 
             <CollectionContext.Provider value={collection}>
                 <PanelContext.Provider value={{
                     closePanel: () => {
-                        collectionPrivateList.current?.scrollIntoView({behavior: "smooth"});
+                        if (collection.profileId === 0) collectionPublicList.current?.scrollIntoView({behavior: "smooth"});
+                        else collectionPrivateList.current?.scrollIntoView({behavior: "smooth"});
                         setTimeout(() => setRefresh(!isRefresh), 100);
                         setTimeout(() => setIsAnyOpen(false), 300);
                     },
                     reopenPanel: handleReopen
                 }}>
-                <div style={{padding: 50,}} ref={startOfPanel}/>
-                {isAnyOpen ? <CollectionPanel key={collection.id}/> : <></>}
+                    <div style={{padding: 50,}} ref={startOfPanel}/>
+                    {isAnyOpen ? <CollectionPanel key={collection.id}/> : <></>}
                 </PanelContext.Provider>
             </CollectionContext.Provider>
         </div>

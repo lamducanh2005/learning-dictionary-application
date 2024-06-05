@@ -8,33 +8,35 @@ import {
     AlertDialogOverlay, Button,
     useDisclosure
 } from "@chakra-ui/react";
-import {useRef} from "react";
+import {useContext, useRef} from "react";
+import {CollectionContext} from "Frontend/components/Collection/CollectionBody";
 
 export default function PanelWordListItem(props: any) {
 
     const {isOpen, onOpen, onClose} = useDisclosure()
     const cancelRef = useRef<any>()
-
+    const collection = useContext(CollectionContext)
     const handleDelete = () => {
         onClose();
         setTimeout(() => {
             props.onDelete(props.word.id);
         }, 100);
-
-
     }
 
     return (
         <div className={"panel-word-list-item"}>
             <span className={"word"}>{props.word.word}</span>
-            <motion.button
-                className={"delete-button"}
-                whileHover={{scale: 1.2}}
-                whileTap={{scale: 0.9}}
-                onClick={onOpen}
-            >
-                <DeleteIcon className={"icon"}/>
-            </motion.button>
+            { // @ts-ignore
+                (collection.profileId > 0) &&
+                <motion.button
+                    className={"delete-button"}
+                    whileHover={{scale: 1.2}}
+                    whileTap={{scale: 0.9}}
+                    onClick={onOpen}
+                >
+                    <DeleteIcon className={"icon"}/>
+                </motion.button>
+            }
 
             <AlertDialog
                 leastDestructiveRef={cancelRef}

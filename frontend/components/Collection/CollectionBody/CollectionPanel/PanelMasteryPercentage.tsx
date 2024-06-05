@@ -3,16 +3,18 @@ import {useContext, useEffect, useState} from "react";
 import {CollectionService} from "Frontend/generated/endpoints";
 import {CollectionContext} from "Frontend/components/Collection/CollectionBody";
 import {Doughnut} from "react-chartjs-2";
+import {ProfileContext} from "Frontend/App";
 
 export default function PanelMasteryPercentage() {
 
     const collection = useContext(CollectionContext)
+    const profile = useContext(ProfileContext);
     const [mastery, setMastery] = useState(0);
 
     useEffect(() => {
         const updateMastery = async () => {
             // @ts-ignore
-            setMastery(await CollectionService.getMasteryOfCollection(collection.id))
+            setMastery(await CollectionService.getMasteryOfCollection(collection.id, profile.id))
         }
         updateMastery();
     }, [collection]);

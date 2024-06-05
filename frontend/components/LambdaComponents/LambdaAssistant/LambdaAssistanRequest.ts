@@ -11,6 +11,7 @@ export default async function LambdaAssistantRequest(request: string, type: stri
         'antonym': 'Hãy liệt kê các từ tiếng Anh trái nghĩa với từ "' + request + '", các từ trái nghĩa nhất thì sắp xếp lên đầu, mỗi từ thì hãy giải thích một chút.',
         'explaining': 'Tôi là một đang học tiếng Anh, hãy giải nghĩa cho tôi từ "' + request + '"',
         'grammar-check': 'Tôi đang học tiếng Anh, hãy giúp tôi kiểm tra ngữ pháp trong câu sau: "' + request + '". Hãy chỉ ra cụ thể lỗi sai ở đâu, vì sao nó sai và cách sửa nó.',
+        'paraphrase': 'I would like to paraphrase the sentence: "' + request + '". Please rephrase it in the most natural way possible, ensuring that it remains similar in length and maintains the same level of English proficiency.',
     }
 
 
@@ -19,6 +20,8 @@ export default async function LambdaAssistantRequest(request: string, type: stri
         return LambdaAssistantTranslationCore(request, 'en', 'vi');
     else if (type === 'translate-vie-to-eng')
         return LambdaAssistantTranslationCore(request, 'vi', 'en');
+    else if (type === 'paraphrase')
+        return await LambdaAssistantGeminiCore(templates[type]);
     else // @ts-ignore
         return await LambdaAssistantGPTCore(templates[type]);
 

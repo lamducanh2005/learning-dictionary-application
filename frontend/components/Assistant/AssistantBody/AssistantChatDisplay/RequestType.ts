@@ -4,7 +4,8 @@ const RequestType = {
     'synonym': 'Tìm các từ tương đồng',
     'antonym': 'Tìm các từ trái nghĩa',
     'explaining': 'Giải thích từ vựng',
-    'grammar-check': 'Kiểm tra ngữ pháp'
+    'grammar-check': 'Kiểm tra ngữ pháp',
+    'paraphrase': 'Diễn giải câu theo cách khác',
 }
 
 export default RequestType;

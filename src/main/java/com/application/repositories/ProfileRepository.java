@@ -13,7 +13,7 @@ public interface ProfileRepository extends JpaRepository<Profile, Long> {
     @Query("SELECT p FROM Profile p WHERE p.id = ?1")
     Profile findProfileById(Long id);
 
-    @Query("SELECT p FROM Profile p")
+    @Query("SELECT p FROM Profile p WHERE p.visible = true")
     List<Profile> findAllProfiles();
 
 }

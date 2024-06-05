@@ -1,0 +1,45 @@
+.main-header-profile-setting {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: #111;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-setting-overlay {
+    background-color: rgba(0, 0, 0, 0.2) !important;
+}
+
+.profile-setting-popup {
+    font-family: "JetBrains Mono", monospace;
+    background-color: rgba(255, 255, 255, 0.75) !important;
+    backdrop-filter: blur(10px);
+    border-radius: 10px !important;
+}
+
+.profile-setting-popup .delete-profile-button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #e42a2a;
+    color: #eee;
+}
+
+.profile-setting-popup .switch-profile-button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #e42a2a;
+    margin-left: 10px;
+}
+
+.profile-setting-popup .save-change-button {
+    padding: 5px 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #1f59d7;
+}
+

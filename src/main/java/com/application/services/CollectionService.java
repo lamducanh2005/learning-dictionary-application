@@ -154,7 +154,7 @@ public class CollectionService {
      * @param collectionId là mã định danh của bộ sưu tập cần lấy
      * @return số nguyên là mức độ thành thạo của bộ sưu tập trên thang 100
      */
-    public Long getMasteryOfCollection(Long collectionId) {
+    public Long getMasteryOfCollection(Long collectionId, Long profileId) {
         Collection collection = collectionRepository.findCollectionById(collectionId);
         Long totalMastery = 0L;
 
@@ -162,7 +162,7 @@ public class CollectionService {
         if (collection.getWords().isEmpty()) return 0L;
 
         for (Word word : collection.getWords()) {
-            Long masteryRate = profileWordRepository.findMasteryRateByProfileIdAndWordId(collection.getProfileId(), word.getId());
+            Long masteryRate = profileWordRepository.findMasteryRateByProfileIdAndWordId(profileId, word.getId());
             if (masteryRate != null) totalMastery += masteryRate;
         }
 
@@ -174,7 +174,7 @@ public class CollectionService {
      * @param collectionId là mã định danh của bộ sưu tập cần lấy
      * @return số thực là mức độ thành thạo của bộ sưu tập trên thang 100
      */
-    public Double getExactMasteryOfCollection(Long collectionId) {
+    public Double getExactMasteryOfCollection(Long collectionId, Long profileId) {
         Collection collection = collectionRepository.findCollectionById(collectionId);
         Double totalMastery = 0.0;
 
@@ -182,7 +182,7 @@ public class CollectionService {
         if (collection.getWords().isEmpty()) return 0.0;
 
         for (Word word : collection.getWords()) {
-            Long masteryRate = profileWordRepository.findMasteryRateByProfileIdAndWordId(collection.getProfileId(), word.getId());
+            Long masteryRate = profileWordRepository.findMasteryRateByProfileIdAndWordId(profileId, word.getId());
             if (masteryRate != null) totalMastery += masteryRate;
         }
 

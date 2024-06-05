@@ -6,7 +6,6 @@ import 'Frontend/themes/Collection/CollectionList/CollectionPrivateList.css';
 import CollectionPrivateItem from "Frontend/components/Collection/CollectionBody/CollectionList/CollectionPrivateItem";
 import CollectionCreateButton
     from "Frontend/components/Collection/CollectionBody/CollectionList/CollectionCreateButton";
-import {set} from "@polymer/polymer/lib/utils/path";
 
 export default function CollectionPrivateList(props: any) {
 
@@ -23,7 +22,6 @@ export default function CollectionPrivateList(props: any) {
             }
         }
         updateCollections();
-        console.log("refreshed")
     }, [isAdding, profile, props.isRefresh]);
 
     const handleAdd = async (newCollection: Collection) => {
