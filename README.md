@@ -61,6 +61,108 @@ cầu từ người dùng:
 
 ----
 
+## Một số hình ảnh về ứng dụng
+
+![alt](/AppGuideline/start-screen.png)
+<div style="text-align:center">Màn hình đầu tiên xuất hiện khi bạn khởi động ứng dụng. <br/> Chọn bất kỳ một hồ sơ hoặc tạo hồ sơ mới để bắt đầu học!</div>
+<br/><br/>
+
+![alt](AppGuideline/main-screen.png)
+<div style="text-align:center">Màn hình chính của ứng dụng. Tất cả tính năng của ứng dụng được trình bày hết tại đây.</div>
+<br/><br/>
+
+![alt](AppGuideline/main-screen-features.png)
+<div style="text-align:center">Ứng dụng có 3 tính năng chính: Từ điển, Bộ sưu tập, Trợ lý.</div>
+<br/><br/>
+
+![alt](/AppGuideline/dictionary-blank-screen.png)
+Đây là màn hình chính của tính năng từ điển. Hãy gõ bất kỳ từ gì để tìm kiếm!
+<br/><br/>
+
+![alt](/AppGuideline/dictionary-search.png)
+Khi gõ, các gợi ý sẽ hiện ra. Bạn có thể dùng chuột hoặc phím mũi tên để chọn từ muốn tra cứu.
+<br/><br/>
+
+![alt](AppGuideline/dictionary-result-screen.png)
+Nhấn chuột hoặc Enter, kết quả từ vựng sẽ hiện ra
+<br/><br/>
+
+![alt](AppGuideline/dictionary-result-screen-2.png)
+Kéo xuống để xem toàn bộ thông tin về từ vựng: giải mã, ví dụ, từ liên quan, v.v.
+<br/><br/>
+
+![alt](AppGuideline/dictionary-result-relatedwords.png)
+Nhấn vào một từ liên quan, bạn sẽ biết được sự giống và khác nhau giữa hai từ vựng.
+<br/><br/>
+
+![alt](AppGuideline/dictionary-result-addtocollection.png)
+Nếu bạn quan tâm đến từ này, hãy thêm chúng vào bộ sưu tập của mình.
+<br/><br/>
+
+![alt](AppGuideline/sidebar-dictionary-result-screen.png)
+Thanh bên được tạo ra để thuận tiện trong việc chuyển đổi giữa các tính năng.<br/>
+Hãy chọn tính năng Bộ sưu tập để truy các bộ sưu tập thôi nào.
+<br/><br/>
+
+![alt](AppGuideline/collection-screen.png)
+Đây là màn hình chính của bộ sưu tập, gồm bộ sưu tập chung và bộ sưu tập cá nhân. <br/>
+Bấm vào một bộ sưu tập, màn hình sẽ kéo xuống và hiện ra thông tin của bộ sưu tập đó.
+<br/><br/>
+
+![alt](AppGuideline/collection-info-screen.png)
+Ta có thể quản lý tiến độ học của mình thông qua một bộ sưu tập.
+<br/><br/>
+
+![alt](AppGuideline/collection-createcollection.png)
+Với mỗi hồ sơ, ta có thể tạo không giới hạn các bộ sưu tập.
+<br/><br/>
+
+![alt](AppGuideline/collection-deleteword.png)
+Thêm vào được thì cũng phải xóa được.
+<br/><br/>
+
+![alt](AppGuideline/collection-revision.png)
+Chức năng cơ bản của bộ sưu tập là cho phép xem lại tất cả từ vựng cùng nơi.
+<br/><br/>
+
+![alt](AppGuideline/mastering-start.png)
+Với mỗi bộ sưu tập, hệ thống sẽ thiết kế ra những câu hỏi phù hợp với hồ sơ hiện tại.
+<br/><br/>
+
+![alt](AppGuideline/mastering-question.png)
+Câu hỏi ở dạng trắc nghiệm, có thể có hai, bốn hoặc sáu lựa chọn, thậm chí là nhiều hơn.
+<br/><br/>
+
+![alt](AppGuideline/mastering-question-increase.png)
+Trả lời đúng có thể tăng độ thành thạo.<br/>
+Một câu hỏi có thể có nhiều đáp án đúng, nhưng độ thành thạo nhận được là khác nhau.
+<br/><br/>
+
+![alt](AppGuideline/mastering-question-decrease.png)
+Trả lời sai có thể bị giảm độ thành thạo.<br/>
+Có đáp án giảm ít, có đáp án giảm nhiều, hoặc nếu câu hỏi khó hơn so với trình độ thì không giảm.<br/>
+Bạn có thể chọn bỏ qua câu khó, hoặc kết thúc phần làm bài.
+<br/><br/>
+
+![alt](AppGuideline/mastering-question-result.png)
+Một thống kê nhỏ hiện ra khi bạn làm xong.
+<br/><br/>
+
+![alt](AppGuideline/assistant-blank-screen.png)
+Tính năng trợ lý sẽ giúp bạn học tập nâng cao hơn.
+<br/><br/>
+
+![alt](AppGuideline/assistant-prompt-menu.png)
+Có một số mẫu lệnh mà trợ lý có thể hiểu được.
+<br/><br/>
+
+![alt](AppGuideline/assistant-answer.png)
+<br/>Trợ lý sẽ suy nghĩ một lúc, sau đó đưa ra câu trả lời hợp lý nhất.
+
+
+
+----
+
 ## Phát triển ứng dụng
 
 ### 1. Công nghệ
