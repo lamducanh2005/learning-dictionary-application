@@ -1,4 +1,6 @@
 # LAMBDA
+![](AppGuideline/example.svg)
+
 
 **LAMBDA** - Ứng dụng phát triển vốn từ vựng tiếng Anh. Thay cho cách tiếp cận truyền thống,
 người học sẽ được tiếp cận các từ vựng tiếng Anh theo hướng thực tế và tư duy liên kết.
