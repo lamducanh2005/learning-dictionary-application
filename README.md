@@ -1,5 +1,5 @@
 # LAMBDA
-![](AppGuideline/example.svg)
+![](https://t3.ftcdn.net/jpg/07/06/64/92/240_F_706649299_Ny7v2TIa5ky5bLXvWnBeRv6vQPZEQDMo.jpg)
 
 
 **LAMBDA** - Ứng dụng phát triển vốn từ vựng tiếng Anh. Thay cho cách tiếp cận truyền thống,
