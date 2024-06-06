@@ -71,7 +71,7 @@ cầu từ người dùng:
 <div style="text-align:center">Màn hình chính của ứng dụng. Tất cả tính năng của ứng dụng được trình bày hết tại đây.</div>
 <br/><br/>
 
-![alt](AppGuideline/main-screen-features.png)
+![alt](AppGuideline/main-screen-features.gif)
 <div style="text-align:center">Ứng dụng có 3 tính năng chính: Từ điển, Bộ sưu tập, Trợ lý.</div>
 <br/><br/>
 
